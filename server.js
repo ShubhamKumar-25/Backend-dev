@@ -12,6 +12,27 @@ const users = [
         age: 22,
         email: "rohan.gupta@example.com",
         city: "New Delhi"
+    },
+    {
+        id: 2,
+        name: "Priya Sharma",
+        age: 28,
+        email: "priya.sharma@example.com",
+        city: "Mumbai"
+    },
+    {
+        id: 3,
+        name: "Amit Kumar",
+        age: 30,
+        email: "amit.kumar@example.com",
+        city: "Bangalore"
+    },
+    {
+        id: 4,
+        name: "Sneha Patel",
+        age: 25,
+        email: "sneha.patel@example.com",
+        city: "Chennai"
     }
 ];
 
@@ -172,5 +193,5 @@ app.delete('/user/:id', async (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server is running on localhost ${PORT}`);
-    
+
 })
