@@ -36,6 +36,7 @@ const users = [
     }
 ];
 
+
 // To fetch all users
 app.get('/users', async (req , res) => {
     try {
