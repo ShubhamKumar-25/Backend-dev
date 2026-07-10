@@ -200,3 +200,24 @@ function third(){
     console.log("This is the third function.");
 }
 third();
+
+
+console.log("--------------------------------------------------------------");
+
+// callback function
+function fetchData(callback) {
+    setTimeout(() => {
+        const data = {
+            name: "Rohan Gupta",
+            age: 22,
+            salary: 50000
+        };
+        callback(data);
+    }, 3000);
+}
+
+function processData(data) {
+    console.log(`Name: ${data.name}, Age: ${data.age}, Salary: ${data.salary}`);
+}
+
+fetchData(processData);
