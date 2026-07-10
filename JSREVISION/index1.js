@@ -256,35 +256,53 @@ let ans2 = calculate(45, 45, add1);
 
 
 
-function f1(){
-    console.log("1");
-}
-f1();
+// function f1(){
+//     console.log("1");
+// }
+// f1();
 
-function f2(){
-    setTimeout(() => {
-        console.log("2");
-    }, 0)
-}
-f2();
+// function f2(){
+//     setTimeout(() => {
+//         console.log("2");
+//     }, 0)
+// }
+// f2();
 
-const promise = new Promise((resolve, reject) => {
-    let success = true;
+// const promise = new Promise((resolve, reject) => {
+//     let success = true;
 
-    if(success){
-        resolve("Our promise is resolve successfully");
+//     if(success){
+//         resolve("Our promise is resolve successfully");
+//     }
+//     else{
+//         reject("Our promise is rejected");
+//     }
+// })
+// promise.then((data) => {
+//     console.log(data);
+// }).catch((error) => {
+//     console.log(error);
+// })
+
+// function f3(){
+//     console.log("3")
+// }
+// f3();
+
+
+function outer(){
+    let count = 0;
+    function inner(){
+        count++;
+        return count;
     }
-    else{
-        reject("Our promise is rejected");
-    }
-})
-promise.then((data) => {
-    console.log(data);
-}).catch((error) => {
-    console.log(error);
-})
-
-function f3(){
-    console.log("3")
+    return inner;
 }
-f3();
+
+let counter = outer();
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
+
+
