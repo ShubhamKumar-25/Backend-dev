@@ -151,11 +151,14 @@ const add = (a, b) => {
 }
 const result = add(10, 60);
 // console.log(result);
+const multiply = (x, y) => x * y;
+const result1 = multiply(5, 10);
+console.log(result1);
 
 // Anonymous function
-setTimeout(function(){
-    console.log("Hey everyone rohan gupta this side and this is an anonymous function");
-},2000);
+// setTimeout(function(){
+//     console.log("Hey everyone rohan gupta this side and this is an anonymous function");
+// },2000);
 
 
 // function with default parameters
@@ -186,7 +189,6 @@ const promise = new Promise((resolve, reject) => {
         reject("Promise rejected.");
     };
 });
-
 promise.then((data) => {
     console.log(data);
 }).catch((error) => {
