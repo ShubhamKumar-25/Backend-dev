@@ -290,19 +290,53 @@ let ans2 = calculate(45, 45, add1);
 // f3();
 
 
-function outer(){
-    let count = 0;
-    function inner(){
-        count++;
-        return count;
-    }
-    return inner;
+// function outer(){
+//     let count = 0;
+//     function inner(){
+//         count++;
+//         return count;
+//     }
+//     return inner;
+// }
+// let counter = outer();
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+
+
+
+function createAccount(name, balance){
+    let pin = "1234";
+    
+    return {
+        getData: function(inputPin){
+            if(inputPin == pin){
+                return `Name: ${name}, balance: ${balance}`;
+            }
+            else{
+                return `access denied!!`
+            }
+        },
+
+        deposite: function(amount, inputPin){
+            if(inputPin == pin){
+                balance += amount;
+                return `New balance ${balance}`;
+            }
+            else{
+                return `Wrong pin.....`
+            }
+        }
+    };
 }
 
-let counter = outer();
-console.log(counter());
-console.log(counter());
-console.log(counter());
-console.log(counter());
+let print = createAccount("Rohan Gupta", 60000);
+// console.log(print.getData("1234"));
+// console.log(print.getData("1235"));
+console.log(print.deposite(3000, "1234"));
+console.log(print.deposite(9000, "1234"));
+
+
 
 
