@@ -122,3 +122,79 @@
 // console.log(slicedArr);
 // arr3.splice(2, 3, 100, 200);
 // console.log(arr3);
+
+// const arr4 = [29, 10, 3, 98, 5, 11, 5, 3];
+// arr4.sort((a, b) => a - b);
+// console.log(arr4);
+
+// arr4.sort((a, b) => b - a);
+// console.log(arr4);
+
+
+
+// from here we revising of function in javascript
+// function decelaration
+function name() {
+console.log("Hello, this is a function declaration.");
+}
+// name();
+
+// function expression
+const greet = function() {
+    console.log("Hello, this is a function expression.");
+}
+// greet();
+
+// arrow function
+const add = (a, b) => {
+    return a + b;
+}
+const result = add(10, 60);
+// console.log(result);
+
+// Anonymous function
+setTimeout(function(){
+    console.log("Hey everyone rohan gupta this side and this is an anonymous function");
+},2000);
+
+
+// function with default parameters
+const greetUser = (name = "Rohan Gupta") => {
+    console.log(`Hello, ${name}! welcome to the world of JavaScript.`)
+}
+// greetUser();
+
+// javascript execution context and call stack
+function first(){
+    console.log("This is the first function.");
+}
+first();
+
+function second(){
+    setTimeout(() => {
+        console.log("This is the second function.");
+    }, 5000);
+}
+second();
+
+const promise = new Promise((resolve, reject) => {
+    let success = true;
+    if(success){
+        resolve("Promise resolved successfully.");
+    }
+    else{
+        reject("Promise rejected.");
+    };
+});
+
+promise.then((data) => {
+    console.log(data);
+}).catch((error) => {
+    console.log(error);
+});
+
+
+function third(){
+    console.log("This is the third function.");
+}
+third();
