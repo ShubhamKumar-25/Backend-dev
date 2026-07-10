@@ -153,7 +153,7 @@ const result = add(10, 60);
 // console.log(result);
 const multiply = (x, y) => x * y;
 const result1 = multiply(5, 10);
-console.log(result1);
+// console.log(result1);
 
 // Anonymous function
 // setTimeout(function(){
@@ -168,56 +168,123 @@ const greetUser = (name = "Rohan Gupta") => {
 // greetUser();
 
 // javascript execution context and call stack
-function first(){
-    console.log("This is the first function.");
-}
-first();
+// function first(){
+//     console.log("This is the first function.");
+// }
+// first();
 
-function second(){
-    setTimeout(() => {
-        console.log("This is the second function.");
-    }, 5000);
+// function second(){
+//     setTimeout(() => {
+//         console.log("This is the second function.");
+//     }, 5000);
+// }
+// second();
+
+// const promise = new Promise((resolve, reject) => {
+//     let success = true;
+//     if(success){
+//         resolve("Promise resolved successfully.");
+//     }
+//     else{
+//         reject("Promise rejected.");
+//     };
+// });
+// promise.then((data) => {
+//     console.log(data);
+// }).catch((error) => {
+//     console.log(error);
+// });
+
+
+// function third(){
+//     console.log("This is the third function.");
+// }
+// third();
+
+
+// console.log("--------------------------------------------------------------");
+
+// // callback function
+// function fetchData(callback) {
+//     setTimeout(() => {
+//         const data = {
+//             name: "Rohan Gupta",
+//             age: 22,
+//             salary: 50000
+//         };
+//         callback(data);
+//     }, 3000);
+// }
+
+// function processData(data) {
+//     console.log(`Name: ${data.name}, Age: ${data.age}, Salary: ${data.salary}`);
+// }
+
+// fetchData(processData);
+
+
+// another call back function
+function fun1(){
+    console.log("This is function one");
 }
-second();
+function fun2(){
+    console.log("This is function Two");
+}
+// fun1(fun2);
+// fun2(fun1);
+
+
+// higher order function
+function calculate(a, b, operation){
+    return operation(a, b);
+}
+
+function add1(x, y){
+    return x + y;
+}
+
+let ans2 = calculate(45, 45, add1);
+// console.log(ans2);
+
+
+// IIFE 
+// (function () {
+//     console.log('Hey this is IIFE function ');
+    
+// })();
+
+
+
+
+function f1(){
+    console.log("1");
+}
+f1();
+
+function f2(){
+    setTimeout(() => {
+        console.log("2");
+    }, 0)
+}
+f2();
 
 const promise = new Promise((resolve, reject) => {
     let success = true;
+
     if(success){
-        resolve("Promise resolved successfully.");
+        resolve("Our promise is resolve successfully");
     }
     else{
-        reject("Promise rejected.");
-    };
-});
+        reject("Our promise is rejected");
+    }
+})
 promise.then((data) => {
     console.log(data);
 }).catch((error) => {
     console.log(error);
-});
+})
 
-
-function third(){
-    console.log("This is the third function.");
+function f3(){
+    console.log("3")
 }
-third();
-
-
-console.log("--------------------------------------------------------------");
-
-// callback function
-function fetchData(callback) {
-    setTimeout(() => {
-        const data = {
-            name: "Rohan Gupta",
-            age: 22,
-            salary: 50000
-        };
-        callback(data);
-    }, 3000);
-}
-
-function processData(data) {
-    console.log(`Name: ${data.name}, Age: ${data.age}, Salary: ${data.salary}`);
-}
-
-fetchData(processData);
+f3();
