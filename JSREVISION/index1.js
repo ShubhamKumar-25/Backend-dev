@@ -306,37 +306,55 @@ let ans2 = calculate(45, 45, add1);
 
 
 
-function createAccount(name, balance){
-    let pin = "1234";
+// function createAccount(name, balance){
+//     let pin = "1234";
     
-    return {
-        getData: function(inputPin){
-            if(inputPin == pin){
-                return `Name: ${name}, balance: ${balance}`;
-            }
-            else{
-                return `access denied!!`
-            }
-        },
+//     return {
+//         getData: function(inputPin){
+//             if(inputPin == pin){
+//                 return `Name: ${name}, balance: ${balance}`;
+//             }
+//             else{
+//                 return `access denied!!`
+//             }
+//         },
 
-        deposite: function(amount, inputPin){
-            if(inputPin == pin){
-                balance += amount;
-                return `New balance ${balance}`;
-            }
-            else{
-                return `Wrong pin.....`
-            }
-        }
-    };
+//         deposite: function(amount, inputPin){
+//             if(inputPin == pin){
+//                 balance += amount;
+//                 return `New balance ${balance}`;
+//             }
+//             else{
+//                 return `Wrong pin.....`
+//             }
+//         }
+//     };
+// }
+
+// let print = createAccount("Rohan Gupta", 60000);
+// // console.log(print.getData("1234"));
+// // console.log(print.getData("1235"));
+// console.log(print.deposite(3000, "1234"));
+// console.log(print.deposite(9000, "1234"));
+
+
+
+// test('passwaord should be at least 8 chacter', () => {
+//   expect(ValidPassword("qede")).toBe(false);
+// })
+
+function validPassword(password){
+    return password.length>=5;
 }
+let ans1 = validPassword(123456);
+console.log(ans1);
 
-let print = createAccount("Rohan Gupta", 60000);
-// console.log(print.getData("1234"));
-// console.log(print.getData("1235"));
-console.log(print.deposite(3000, "1234"));
-console.log(print.deposite(9000, "1234"));
 
+function reverseString(str){
+    return str.split('').reverse().join('');
+}
+let ans = reverseString("hello");
+console.log(ans);
 
 
 
