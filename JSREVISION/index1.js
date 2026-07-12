@@ -387,12 +387,12 @@ const promise2 = new Promise((resolve, reject) => {
     }
 })
 
-promise2.then((data) => {
-    console.log(data);
-})
-.catch((error) => {
-    console.log(error);
-})
+// promise2.then((data) => {
+//     console.log(data);
+// })
+// .catch((error) => {
+//     console.log(error);
+// })
 
 
 // for example login check
@@ -410,12 +410,12 @@ function loginUser(){
     })
 }
 
-loginUser().then((message) => {
-    console.log(message);
-})
-.catch((error) => {
-    console.log(error);
-})
+// loginUser().then((message) => {
+//     console.log(message);
+// })
+// .catch((error) => {
+//     console.log(error);
+// })
 
 
 // using setTime
@@ -434,7 +434,22 @@ function promise3(){
     })
 }
 
-promise3()
-    .then(result => console.log("Resolved:", result))
-    .catch(error => console.log("Rejected:", error))
-    .finally(() => console.log("Process finished"));
+// promise3()
+//     .then(result => console.log("Resolved:", result))
+//     .catch(error => console.log("Rejected:", error))
+//     .finally(() => console.log("Process finished"));
+
+
+const promise4 = new Promise((resolve) => {
+    resolve(20);
+})
+
+promise4.then((data) => {
+    console.log(data);
+    return data * 2;
+}).then((data) => {
+    console.log(data);
+    return data + 40;
+}).then((data) => {
+    console.log(data);
+})
