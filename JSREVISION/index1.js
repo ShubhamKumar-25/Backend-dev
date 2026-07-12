@@ -434,13 +434,7 @@ function promise3(){
     })
 }
 
-promise3().catch((data) => {
-    console.log(data);
-    
-}).catch((err) => {
-    console.log(err);
-    
-}).finally((message) => {
-    console.log("this block is always execute");
-    
-})
+promise3()
+    .then(result => console.log("Resolved:", result))
+    .catch(error => console.log("Rejected:", error))
+    .finally(() => console.log("Process finished"));
