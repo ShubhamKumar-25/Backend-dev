@@ -360,20 +360,20 @@ let ans2 = calculate(45, 45, add1);
 
 // from here we are learn about Promise
 
-const promise = new Promise((resolve, reject) => {
-    resolve("Data received");
-});
+// const promise = new Promise((resolve, reject) => {
+//     resolve("Data received");
+// });
 
-promise.then((data) => {
-    console.log(data);
-})
+// promise.then((data) => {
+//     console.log(data);
+// })
 
-const promise1 = new Promise((resolve, reject) => {
-    reject("Data not received")
-});
-promise1.catch((error) => {
-    console.log(error);
-})
+// const promise1 = new Promise((resolve, reject) => {
+//     reject("Data not received")
+// });
+// promise1.catch((error) => {
+//     console.log(error);
+// })
 
 
 // resolve and reject together
@@ -440,16 +440,39 @@ function promise3(){
 //     .finally(() => console.log("Process finished"));
 
 
-const promise4 = new Promise((resolve) => {
-    resolve(20);
-})
+// const promise4 = new Promise((resolve) => {
+//     resolve(20);
+// })
+// promise4.then((data) => {
+//     console.log(data);
+//     return data * 2;
+// }).then((data) => {
+//     console.log(data);
+//     return data + 40;
+// }).then((data) => {
+//     console.log(data);
+// })
 
-promise4.then((data) => {
+
+//from here we are learn async and await
+async function userData(){
+    return "Rohan Gupta";
+}
+userData().then((data) => {
     console.log(data);
-    return data * 2;
-}).then((data) => {
-    console.log(data);
-    return data + 40;
-}).then((data) => {
-    console.log(data);
-})
+}).catch(err => console.log(err));
+
+
+function isStudent(){
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Yes, you are a student");
+        },4000)
+    })
+}
+
+async function fetchData(){
+    let result = await isStudent();
+    console.log(result);
+}
+fetchData();
