@@ -343,18 +343,104 @@ let ans2 = calculate(45, 45, add1);
 //   expect(ValidPassword("qede")).toBe(false);
 // })
 
-function validPassword(password){
-    return password.length>=5;
+// function validPassword(password){
+//     return password.length>=5;
+// }
+// let ans1 = validPassword(123456);
+// console.log(ans1);
+
+
+// function reverseString(str){
+//     return str.split('').reverse().join('');
+// }
+// let ans = reverseString("hello");
+// console.log(ans);
+
+
+
+// from here we are learn about Promise
+
+const promise = new Promise((resolve, reject) => {
+    resolve("Data received");
+});
+
+promise.then((data) => {
+    console.log(data);
+})
+
+const promise1 = new Promise((resolve, reject) => {
+    reject("Data not received")
+});
+promise1.catch((error) => {
+    console.log(error);
+})
+
+
+// resolve and reject together
+const promise2 = new Promise((resolve, reject) => {
+    let success = true;
+    if(success){
+        resolve("User login");
+    }
+    else{
+        reject("Something went wrong");
+    }
+})
+
+promise2.then((data) => {
+    console.log(data);
+})
+.catch((error) => {
+    console.log(error);
+})
+
+
+// for example login check
+
+function loginUser(){
+
+    return new Promise((resolve, reject) => {
+        let succes = true;
+        if(succes){
+            resolve("Welcome Shubham Kumar");
+        }
+        else{
+            reject("Invalid Credentials")
+        }
+    })
 }
-let ans1 = validPassword(123456);
-console.log(ans1);
+
+loginUser().then((message) => {
+    console.log(message);
+})
+.catch((error) => {
+    console.log(error);
+})
 
 
-function reverseString(str){
-    return str.split('').reverse().join('');
+// using setTime
+function promise3(){
+    return new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+            let isStudent = true;
+            if(isStudent){
+                resolve("Yes is am student");
+            }
+            else{
+                reject("No i am not a student");
+            }
+        }, 5000);
+    })
 }
-let ans = reverseString("hello");
-console.log(ans);
 
-
-
+promise3().catch((data) => {
+    console.log(data);
+    
+}).catch((err) => {
+    console.log(err);
+    
+}).finally((message) => {
+    console.log("this block is always execute");
+    
+})
