@@ -455,24 +455,40 @@ function promise3(){
 
 
 //from here we are learn async and await
-async function userData(){
-    return "Rohan Gupta";
-}
-userData().then((data) => {
-    console.log(data);
-}).catch(err => console.log(err));
+// async function userData(){
+//     return "Rohan Gupta";
+// }
+// userData().then((data) => {
+//     console.log(data);
+// }).catch(err => console.log(err));
 
 
-function isStudent(){
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve("Yes, you are a student");
-        },4000)
-    })
-}
+// function isStudent(){
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             resolve("Yes, you are a student");
+//         },4000)
+//     })
+// }
 
-async function fetchData(){
-    let result = await isStudent();
-    console.log(result);
+// async function fetchData(){
+//     let result = await isStudent();
+//     console.log(result);
+// }
+// fetchData();
+
+setTimeout(() => {
+    function outer(){
+    let count = 0;
+    function inner(){
+        return count++;
+    }
+    return inner;
 }
-fetchData();
+let counter = outer();
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
+
+},4000)
