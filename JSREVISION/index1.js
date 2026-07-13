@@ -485,10 +485,63 @@ setTimeout(() => {
     }
     return inner;
 }
-let counter = outer();
-console.log(counter());
-console.log(counter());
-console.log(counter());
-console.log(counter());
-
+// let counter = outer();
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
 },4000)
+
+
+// A classic case of Callback Hell
+// getUserData(userId, (user) => {
+//   getOrders(user.id, (orders) => {
+//     getOrderDetails(orders[0].id, (details) => {
+//       getShippingStatus(details.id, (status) => {
+//         console.log(`Shipping status: ${status}`);
+//         // Imagine trying to handle errors for each step here...
+//       });
+//     });
+//   });
+// });
+// getUserData();
+
+
+// async function displayShippingStatus(userId) {
+//   try {
+//     const user = await getUserData(userId);
+//     const orders = await getOrders(user.id);
+//     const details = await getOrderDetails(orders[0].id);
+//     const status = await getShippingStatus(details.id);
+    
+//     console.log(`Shipping status: ${status}`);
+//   } catch (error) {
+//     // One single catch block handles errors for ANY of the steps above!
+//     console.error("Something went wrong along the way:", error);
+//   }
+// }
+
+
+
+async function displayShippingStatus(userId) {
+  try {
+    if (!userId) throw new Error("User ID is required!");
+
+    const user = await getUserData(userId);
+    if (!user) throw new Error("User not found!");
+
+    const orders = await getOrders(user.id);
+    if (!orders || orders.length === 0) throw new Error("No orders found!");
+
+    const details = await getOrderDetails(orders[0].id);
+    if (!details) throw new Error("Order details not found!");
+
+    const status = await getShippingStatus(details.id);
+    console.log(`Shipping status: ${status}`);
+  } catch (error) {
+    console.error("Something went wrong:", error.message);
+  }
+}
+
+// Example call
+displayShippingStatus("12345");
