@@ -477,20 +477,20 @@ function promise3(){
 // }
 // fetchData();
 
-setTimeout(() => {
-    function outer(){
-    let count = 0;
-    function inner(){
-        return count++;
-    }
-    return inner;
-}
+// setTimeout(() => {
+//     function outer(){
+//     let count = 0;
+//     function inner(){
+//         return count++;
+//     }
+//     return inner;
+// }
 // let counter = outer();
 // console.log(counter());
 // console.log(counter());
 // console.log(counter());
 // console.log(counter());
-},4000)
+// },4000)
 
 
 // A classic case of Callback Hell
@@ -523,25 +523,65 @@ setTimeout(() => {
 
 
 
-async function displayShippingStatus(userId) {
-  try {
-    if (!userId) throw new Error("User ID is required!");
+// async function displayShippingStatus(userId) {
+//   try {
+//     if (!userId) throw new Error("User ID is required!");
 
-    const user = await getUserData(userId);
-    if (!user) throw new Error("User not found!");
+//     const user = await getUserData(userId);
+//     if (!user) throw new Error("User not found!");
 
-    const orders = await getOrders(user.id);
-    if (!orders || orders.length === 0) throw new Error("No orders found!");
+//     const orders = await getOrders(user.id);
+//     if (!orders || orders.length === 0) throw new Error("No orders found!");
 
-    const details = await getOrderDetails(orders[0].id);
-    if (!details) throw new Error("Order details not found!");
+//     const details = await getOrderDetails(orders[0].id);
+//     if (!details) throw new Error("Order details not found!");
 
-    const status = await getShippingStatus(details.id);
-    console.log(`Shipping status: ${status}`);
-  } catch (error) {
-    console.error("Something went wrong:", error.message);
-  }
+//     const status = await getShippingStatus(details.id);
+//     console.log(`Shipping status: ${status}`);
+//   } catch (error) {
+//     console.error("Something went wrong:", error.message);
+//   }
+// }
+
+// // Example call
+// displayShippingStatus("12345");
+
+
+// function sum(a, b){
+//     let ans = a + b;
+//     return ans;
+// }
+// let vv = sum(11, 11);
+// console.log(vv);
+
+// function sum(a, b){
+//     return a+b;
+// }
+// let vv = sum(11,11);
+// console.log(vv);
+
+
+console.log("1");
+
+const promise = new Promise((resolve, reject) => {
+    let success = true;
+    if(success){
+        resolve("promise resolved");
+    }
+    else{
+        reject("promise reject");
+    }
+})
+promise.then((data) => console.log(data))
+.catch((error) => console.log(error))
+.finally((data) => console.log("Final always execute"));
+
+function print(){
+    setTimeout(() => {
+        console.log("SetTime out function");
+    }, 0)
 }
+print();
 
-// Example call
-displayShippingStatus("12345");
+console.log("4");
+
