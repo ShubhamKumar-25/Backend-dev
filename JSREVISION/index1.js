@@ -561,27 +561,41 @@ function promise3(){
 // console.log(vv);
 
 
-console.log("1");
+// console.log("1");
 
-const promise = new Promise((resolve, reject) => {
-    let success = true;
-    if(success){
-        resolve("promise resolved");
-    }
-    else{
-        reject("promise reject");
-    }
-})
-promise.then((data) => console.log(data))
-.catch((error) => console.log(error))
-.finally((data) => console.log("Final always execute"));
+// const promise = new Promise((resolve, reject) => {
+//     let success = true;
+//     if(success){
+//         resolve("promise resolved");
+//     }
+//     else{
+//         reject("promise reject");
+//     }
+// })
+// promise.then((data) => console.log(data))
+// .catch((error) => console.log(error))
+// .finally((data) => console.log("Final always execute"));
 
-function print(){
-    setTimeout(() => {
-        console.log("SetTime out function");
-    }, 0)
+// function print(){
+//     setTimeout(() => {
+//         console.log("SetTime out function");
+//     }, 0)
+// }
+// print();
+
+// console.log("4");
+
+
+// let res = summ(10, 10);
+// console.log(res);
+// function summ(a,b){
+//     return a + b;
+// }
+// summ(10, 10);
+
+
+const aa = print(11, 11);
+console.log(aa);
+const print = function(a, b){
+    return a+b;
 }
-print();
-
-console.log("4");
-
