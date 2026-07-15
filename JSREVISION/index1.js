@@ -602,16 +602,38 @@ function promise3(){
 
 
 // clouser resivision 
-function outer() {
-    let count = 1;
-    function inner() {
-        return count++;
-    }
-    return inner;
+// function outer() {
+//     let count = 1;
+//     function inner() {
+//         return count++;
+//     }
+//     return inner;
+// }
+// const counter = outer();
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+
+
+
+// call back function
+
+function fetchData(rohan){
+    setTimeout(() => {
+        const data = {
+            name: "Rohan Gupta",
+            age: 22,
+            city: "Mohali",
+            salary: 50000
+        }
+        rohan(data);
+    }, 2000)
 }
-const counter = outer();
-console.log(counter());
-console.log(counter());
-console.log(counter());
-console.log(counter());
-console.log(counter());
+
+function callData(data){
+    console.log(`hey Everyone my name is ${data.name} and i am ${data.age} years old. i am from ${data.city}, and my salary is ${data.salary}`);
+}
+
+fetchData(callData);
