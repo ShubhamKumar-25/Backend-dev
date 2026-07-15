@@ -594,8 +594,24 @@ function promise3(){
 // summ(10, 10);
 
 
-const aa = print(11, 11);
-console.log(aa);
-const print = function(a, b){
-    return a+b;
+// const aa = print(11, 11);
+// console.log(aa);
+// const print = function(a, b){
+//     return a+b;
+// }
+
+
+// clouser resivision 
+function outer() {
+    let count = 1;
+    function inner() {
+        return count++;
+    }
+    return inner;
 }
+const counter = outer();
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
