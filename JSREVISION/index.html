@@ -18,7 +18,8 @@
         const clickEvent = event.target;
 
         if(clickEvent.tagName === 'LI'){
-            console.log("Aapne khaya: " + clickedElement.innerText);
+            console.log("Aapne khaya: " + clickEvent.innerText);
+            // alert('Aapne khaye' + clickEvent.innerText)
         }
     })
 </script>
