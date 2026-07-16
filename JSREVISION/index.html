@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+</head>
+<body style="display: flex; color: aliceblue; background-color: darkcyan;">
+    <ul id="list">
+        <li class="item">Samosa 🍕</li>
+        <li class="item">Momos 🥟</li>
+        <li class="item">Biryani 🍛</li>
+    </ul>
+</body>
+<script>
+    const EventList = document.getElementById("list");
+    list.addEventListener('click', (event) => {
+        const clickEvent = event.target;
+
+        if(clickEvent.tagName === 'LI'){
+            console.log("Aapne khaya: " + clickedElement.innerText);
+        }
+    })
+</script>
+</html>

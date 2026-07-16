@@ -134,25 +134,25 @@
 
 // from here we revising of function in javascript
 // function decelaration
-function name() {
-console.log("Hello, this is a function declaration.");
-}
+// function name() {
+// console.log("Hello, this is a function declaration.");
+// }
 // name();
 
 // function expression
-const greet = function() {
-    console.log("Hello, this is a function expression.");
-}
+// const greet = function() {
+//     console.log("Hello, this is a function expression.");
+// }
 // greet();
 
 // arrow function
-const add = (a, b) => {
-    return a + b;
-}
-const result = add(10, 60);
+// const add = (a, b) => {
+//     return a + b;
+// }
+// const result = add(10, 60);
 // console.log(result);
-const multiply = (x, y) => x * y;
-const result1 = multiply(5, 10);
+// const multiply = (x, y) => x * y;
+// const result1 = multiply(5, 10);
 // console.log(result1);
 
 // Anonymous function
@@ -162,9 +162,9 @@ const result1 = multiply(5, 10);
 
 
 // function with default parameters
-const greetUser = (name = "Rohan Gupta") => {
-    console.log(`Hello, ${name}! welcome to the world of JavaScript.`)
-}
+// const greetUser = (name = "Rohan Gupta") => {
+//     console.log(`Hello, ${name}! welcome to the world of JavaScript.`)
+// }
 // greetUser();
 
 // javascript execution context and call stack
@@ -224,26 +224,26 @@ const greetUser = (name = "Rohan Gupta") => {
 
 
 // another call back function
-function fun1(){
-    console.log("This is function one");
-}
-function fun2(){
-    console.log("This is function Two");
-}
+// function fun1(){
+//     console.log("This is function one");
+// }
+// function fun2(){
+//     console.log("This is function Two");
+// }
 // fun1(fun2);
 // fun2(fun1);
 
 
 // higher order function
-function calculate(a, b, operation){
-    return operation(a, b);
-}
+// function calculate(a, b, operation){
+//     return operation(a, b);
+// }
 
-function add1(x, y){
-    return x + y;
-}
+// function add1(x, y){
+//     return x + y;
+// }
 
-let ans2 = calculate(45, 45, add1);
+// let ans2 = calculate(45, 45, add1);
 // console.log(ans2);
 
 
@@ -377,15 +377,15 @@ let ans2 = calculate(45, 45, add1);
 
 
 // resolve and reject together
-const promise2 = new Promise((resolve, reject) => {
-    let success = true;
-    if(success){
-        resolve("User login");
-    }
-    else{
-        reject("Something went wrong");
-    }
-})
+// const promise2 = new Promise((resolve, reject) => {
+//     let success = true;
+//     if(success){
+//         resolve("User login");
+//     }
+//     else{
+//         reject("Something went wrong");
+//     }
+// })
 
 // promise2.then((data) => {
 //     console.log(data);
@@ -397,18 +397,18 @@ const promise2 = new Promise((resolve, reject) => {
 
 // for example login check
 
-function loginUser(){
+// function loginUser(){
 
-    return new Promise((resolve, reject) => {
-        let succes = true;
-        if(succes){
-            resolve("Welcome Shubham Kumar");
-        }
-        else{
-            reject("Invalid Credentials")
-        }
-    })
-}
+//     return new Promise((resolve, reject) => {
+//         let succes = true;
+//         if(succes){
+//             resolve("Welcome Shubham Kumar");
+//         }
+//         else{
+//             reject("Invalid Credentials")
+//         }
+//     })
+// }
 
 // loginUser().then((message) => {
 //     console.log(message);
@@ -419,20 +419,20 @@ function loginUser(){
 
 
 // using setTime
-function promise3(){
-    return new Promise((resolve, reject) => {
+// function promise3(){
+//     return new Promise((resolve, reject) => {
 
-        setTimeout(() => {
-            let isStudent = true;
-            if(isStudent){
-                resolve("Yes is am student");
-            }
-            else{
-                reject("No i am not a student");
-            }
-        }, 5000);
-    })
-}
+//         setTimeout(() => {
+//             let isStudent = true;
+//             if(isStudent){
+//                 resolve("Yes is am student");
+//             }
+//             else{
+//                 reject("No i am not a student");
+//             }
+//         }, 5000);
+//     })
+// }
 
 // promise3()
 //     .then(result => console.log("Resolved:", result))
@@ -619,21 +619,20 @@ function promise3(){
 
 
 // call back function
+// function fetchData(rohan){
+//     setTimeout(() => {
+//         const data = {
+//             name: "Rohan Gupta",
+//             age: 22,
+//             city: "Mohali",
+//             salary: 50000
+//         }
+//         rohan(data);
+//     }, 2000)
+// }
 
-function fetchData(rohan){
-    setTimeout(() => {
-        const data = {
-            name: "Rohan Gupta",
-            age: 22,
-            city: "Mohali",
-            salary: 50000
-        }
-        rohan(data);
-    }, 2000)
-}
+// function callData(data){
+//     console.log(`hey Everyone my name is ${data.name} and i am ${data.age} years old. i am from ${data.city}, and my salary is ${data.salary}`);
+// }
 
-function callData(data){
-    console.log(`hey Everyone my name is ${data.name} and i am ${data.age} years old. i am from ${data.city}, and my salary is ${data.salary}`);
-}
-
-fetchData(callData);
+// fetchData(callData);
