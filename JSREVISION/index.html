@@ -6,7 +6,7 @@
     <title>Event Delegation</title>
 </head>
 <body style="display: flex; color: aliceblue; background-color: darkcyan;">
-    <ul id="list">
+    <ul id="list" style="display: flex; font-size: 20px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
         <li class="item">Samosa 🍕</li>
         <li class="item">Momos 🥟</li>
         <li class="item">Biryani 🍛</li>
@@ -18,8 +18,8 @@
         const clickEvent = event.target;
 
         if(clickEvent.tagName === 'LI'){
-            console.log("Aapne khaya: " + clickEvent.innerText);
-            // alert('Aapne khaye' + clickEvent.innerText)
+            // console.log("Aapne khaya: " + clickEvent.innerText);
+            alert('can you eat ' + clickEvent.innerText);
         }
     })
 </script>
