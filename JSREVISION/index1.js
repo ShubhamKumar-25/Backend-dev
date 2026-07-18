@@ -650,3 +650,13 @@ student.name = "Shubham";
 
 console.log(student.name); // Shubham
 student.greet();           // Hello!
+
+
+const animal = {
+    sound() {
+        console.log("Animal makes sound");
+    }
+}
+
+const dog = Object.create(animal);
+dog.sound();
