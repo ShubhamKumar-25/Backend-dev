@@ -683,5 +683,18 @@ const f2 = function(){
     console.log("Two 2");
 }
 
-f2();
-f1();
+// f2();
+// f1();
+
+
+console.log("Start");
+setTimeout(() => {
+    console.log("Timer");
+    
+}, 2000)
+
+Promise.resolve().then(() => {
+    console.log("Promise resolve");
+})
+
+console.log("emd");
