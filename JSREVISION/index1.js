@@ -636,3 +636,17 @@
 // }
 
 // fetchData(callData);
+
+
+const person = {
+    greet() {
+        console.log("Hello!");
+    }
+};
+
+const student = Object.create(person);
+
+student.name = "Shubham";
+
+console.log(student.name); // Shubham
+student.greet();           // Hello!
