@@ -648,8 +648,8 @@ const student = Object.create(person);
 
 student.name = "Shubham";
 
-console.log(student.name); // Shubham
-student.greet();           // Hello!
+// console.log(student.name); // Shubham
+// student.greet();           // Hello!
 
 
 const animal = {
@@ -659,4 +659,29 @@ const animal = {
 }
 
 const dog = Object.create(animal);
-dog.sound();
+// dog.sound();
+
+
+function one(){
+    console.log("One");
+}
+
+function two(){
+    one();
+    console.log("Two");
+}
+
+// two();
+
+
+const f1 = function(){
+    console.log("One 1");
+}
+
+const f2 = function(){
+    // f1();
+    console.log("Two 2");
+}
+
+f2();
+f1();
