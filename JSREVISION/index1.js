@@ -710,27 +710,59 @@ function Animal(name) {
   this.name = name;
 }
 
-// Adding method to prototype
 Animal.prototype.speak = function () {
   console.log(`${this.name} makes a sound.`);
 };
 
-// Child constructor
 function Dog(name, breed) {
-  Animal.call(this, name); // inherit properties
+  Animal.call(this, name); 
   this.breed = breed;
 }
 
-// Inherit prototype methods
 Dog.prototype = Object.create(Animal.prototype);
 Dog.prototype.constructor = Dog;
 
-// Add child-specific method
 Dog.prototype.bark = function () {
   console.log(`${this.name} the ${this.breed} barks!`);
 };
 
-// Usage
 const dog1 = new Dog("Buddy", "Golden Retriever");
-dog1.speak(); // Buddy makes a sound.
-dog1.bark();  // Buddy the Golden Retriever barks!
+dog1.speak(); 
+dog1.bark(); 
+
+
+
+// Simulated API call using Promise
+function fetchUserData(userId) {
+  return new Promise((resolve, reject) => {
+    console.log("Fetching user data...");
+
+    setTimeout(() => {
+      if (userId === 101) {
+        resolve({
+          id: 101,
+          name: "Rohan",
+          email: "rohan@example.com",
+        });
+      } else {
+        reject(new Error("User not found!"));
+      }
+    }, 2000); // simulate network delay
+  });
+}
+
+// Using the Promise
+fetchUserData(101)
+  .then((user) => {
+    console.log("✅ User fetched successfully:", user);
+    return user.email; // chaining: pass email forward
+  })
+  .then((email) => {
+    console.log("📧 Sending welcome email to:", email);
+  })
+  .catch((error) => {
+    console.error("❌ Error occurred:", error.message);
+  })
+  .finally(() => {
+    console.log("🔚 Operation completed (success or fail).");
+  });
