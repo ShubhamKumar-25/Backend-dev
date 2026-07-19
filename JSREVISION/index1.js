@@ -687,17 +687,50 @@ const f2 = function(){
 // f1();
 
 
-console.log("Start");
-setTimeout(() => {
-    console.log("Timer");
+// console.log("Start");
+// setTimeout(() => {
+//     console.log("Timer");
     
-}, 2000)
+// }, 2000)
 
-Promise.resolve().then(() => {
-    console.log("Promise resolve");
-})
+// Promise.resolve().then(() => {
+//     console.log("Promise resolve");
+// })
 
-console.log("emd");
+// console.log("emd");
 
 
-console.log("Hello");
+// console.log("Hello");
+
+
+
+
+// Parent constructor
+function Animal(name) {
+  this.name = name;
+}
+
+// Adding method to prototype
+Animal.prototype.speak = function () {
+  console.log(`${this.name} makes a sound.`);
+};
+
+// Child constructor
+function Dog(name, breed) {
+  Animal.call(this, name); // inherit properties
+  this.breed = breed;
+}
+
+// Inherit prototype methods
+Dog.prototype = Object.create(Animal.prototype);
+Dog.prototype.constructor = Dog;
+
+// Add child-specific method
+Dog.prototype.bark = function () {
+  console.log(`${this.name} the ${this.breed} barks!`);
+};
+
+// Usage
+const dog1 = new Dog("Buddy", "Golden Retriever");
+dog1.speak(); // Buddy makes a sound.
+dog1.bark();  // Buddy the Golden Retriever barks!
