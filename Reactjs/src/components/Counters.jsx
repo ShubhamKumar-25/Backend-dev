@@ -16,8 +16,29 @@ const Counters = () => {
     <>
       <h1>Rohan Gupta</h1>
       <h1>Counter:{count}</h1>
-      <button onClick={increment}>Increases {count}</button>
-      <button onClick={decrement}>Decreases{count}</button>
+      <button
+        onClick={increment}
+        style={{
+          backgroundColor: "blue",
+          color: "white",
+          height: "30px",
+          margin: "20px",
+          border: "1rem",
+        }}
+      >
+        Increases {count}
+      </button>
+      <button
+        onClick={decrement}
+        style={{
+          backgroundColor: "red",
+          height: "30px",
+          border: "10px",
+          color: "white",
+        }}
+      >
+        Decreases{count}
+      </button>
     </>
   );
 };
