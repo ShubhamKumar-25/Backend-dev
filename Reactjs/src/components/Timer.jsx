@@ -38,6 +38,8 @@ const Timer = () => {
           padding: "8px 16px",
           backgroundColor: "greenyellow",
           color: "black",
+          cursor: "pointer",
+          borderRadius: "5px",
         }}
       >
         {show ? "Hide Time" : "Show Time"}
