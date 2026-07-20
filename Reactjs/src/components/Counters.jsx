@@ -13,7 +13,15 @@ const Counters = () => {
   }
 
   return (
-    <>
+    <div
+      style={{
+        backgroundColor: "blueviolet",
+        color: "white",
+        // display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <h1>Rohan Gupta</h1>
       <h1>Counter:{count}</h1>
       <button
@@ -39,7 +47,7 @@ const Counters = () => {
       >
         Decreases{count}
       </button>
-    </>
+    </div>
   );
 };
 
