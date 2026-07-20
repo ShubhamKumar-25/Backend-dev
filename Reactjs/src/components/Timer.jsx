@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Navbar from "./Navbar";
 
 const Timer = () => {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
