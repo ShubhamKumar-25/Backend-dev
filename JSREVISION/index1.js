@@ -751,7 +751,7 @@ function fetchUserData(userId) {
   });
 }
 
-// Using the Promise
+
 fetchUserData(101)
   .then((user) => {
     console.log("✅ User fetched successfully:", user);
@@ -764,5 +764,5 @@ fetchUserData(101)
     console.error("❌ Error occurred:", error.message);
   })
   .finally(() => {
-    console.log("🔚 Operation completed (success or fail).");
+    console.log("This block always executed weither function is executed or not");
   });
