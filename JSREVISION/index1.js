@@ -706,53 +706,88 @@ const f2 = function(){
 
 
 // Parent constructor
-function Animal(name) {
-  this.name = name;
-}
+// function Animal(name) {
+//   this.name = name;
+// }
 
-Animal.prototype.speak = function () {
-  console.log(`${this.name} makes a sound.`);
-};
+// Animal.prototype.speak = function () {
+//   console.log(`${this.name} makes a sound.`);
+// };
 
-function Dog(name, breed) {
-  Animal.call(this, name); 
-  this.breed = breed;
-}
+// function Dog(name, breed) {
+//   Animal.call(this, name); 
+//   this.breed = breed;
+// }
 
-Dog.prototype = Object.create(Animal.prototype);
-Dog.prototype.constructor = Dog;
+// Dog.prototype = Object.create(Animal.prototype);
+// Dog.prototype.constructor = Dog;
 
-Dog.prototype.bark = function () {
-  console.log(`${this.name} the ${this.breed} barks!`);
-};
+// Dog.prototype.bark = function () {
+//   console.log(`${this.name} the ${this.breed} barks!`);
+// };
 
-const dog1 = new Dog("Buddy", "Golden Retriever");
-dog1.speak(); 
-dog1.bark(); 
+// const dog1 = new Dog("Buddy", "Golden Retriever");
+// dog1.speak(); 
+// dog1.bark(); 
 
 
 
 // Simulated API call using Promise
+// function fetchUserData(userId) {
+//   return new Promise((resolve, reject) => {
+//     console.log("Fetching user data...");
+
+//     setTimeout(() => {
+//       if (userId === 101) {
+//         resolve({
+//           id: 101,
+//           name: "Rohan",
+//           email: "rohan@example.com",
+//         });
+//       } else {
+//         reject(new Error("User not found!"));
+//       }
+//     }, 2000); // simulate network delay
+//   });
+// }
+
+// fetchUserData(101)
+//   .then((user) => {
+//     console.log("✅ User fetched successfully:", user);
+//     return user.email; // chaining: pass email forward
+//   })
+//   .then((email) => {
+//     console.log("📧 Sending welcome email to:", email);
+//   })
+//   .catch((error) => {
+//     console.error("❌ Error occurred:", error.message);
+//   })
+//   .finally(() => {
+//     console.log("This block always executed weither function is executed or not");
+//   });
+
+
+
 function fetchUserData(userId) {
   return new Promise((resolve, reject) => {
     console.log("Fetching user data...");
 
     setTimeout(() => {
-      if (userId === 101) {
+      if (userId === 112) {
         resolve({
           id: 101,
           name: "Rohan",
           email: "rohan@example.com",
+          age: 22,
+          city: "Motihari",
         });
       } else {
         reject(new Error("User not found!"));
       }
-    }, 2000); // simulate network delay
+    }, 2000); 
   });
 }
-
-
-fetchUserData(101)
+fetchUserData(112)
   .then((user) => {
     console.log("✅ User fetched successfully:", user);
     return user.email; // chaining: pass email forward
