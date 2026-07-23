@@ -2,9 +2,17 @@ import React from "react";
 
 const Login = () => {
   return (
-    <div>
-      <h1>Login Page</h1>
-    </div>
+    <div
+      style={{
+        height: "200px",
+        width: "200px",
+        backgroundColor: "black",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+      }}
+    ></div>
   );
 };
 
