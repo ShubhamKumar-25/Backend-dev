@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
-const Login = () => {
-  // Form input values ko track karne ke liye state
+const AuthForm = () => {
+  // State to toggle between Login and Signup
+  const [isLogin, setIsLogin] = useState(true);
+
+  // Form state
   const [formData, setFormData] = useState({
-    name: "",
-    username: "",
+    fullName: "",
     email: "",
     password: "",
   });
@@ -15,110 +17,108 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
+    if (isLogin) {
+      console.log("Logging in with:", formData.email, formData.password);
+    } else {
+      console.log("Signing up with:", formData);
+    }
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "80vh", // Page ke centre me lane ke liye
-      }}
-    >
-      <form
-        onSubmit={handleSubmit}
-        style={{
-          width: "320px",
-          backgroundColor: "#111827",
-          display: "flex",
-          flexDirection: "column",
-          gap: "15px", // Inputs ke beech clean spacing
-          padding: "25px",
-          color: "white",
-          borderRadius: "8px",
-          boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-        }}
-      >
-        <h2 style={{ textAlign: "center", margin: "0 0 10px 0" }}>
-          Login Page
-        </h2>
+    <div style={containerStyle}>
+      <form onSubmit={handleSubmit} style={cardStyle}>
+        <h2>{isLogin ? "Login" : "Sign Up"}</h2>
+
+        {/* Full Name sirf Signup ke vakt dikhega */}
+        {!isLogin && (
+          <div style={inputGroupStyle}>
+            <label>Full Name</label>
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Enter your name"
+              value={formData.fullName}
+              onChange={handleChange}
+              style={inputStyle}
+              required
+            />
+          </div>
+        )}
 
         <div style={inputGroupStyle}>
-          <label>Full Name:</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Enter your name"
-            style={inputStyle}
-          />
-        </div>
-
-        <div style={inputGroupStyle}>
-          <label>Username:</label>
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            placeholder="Set your username"
-            style={inputStyle}
-          />
-        </div>
-
-        <div style={inputGroupStyle}>
-          <label>Email:</label>
+          <label>Email</label>
           <input
             type="email"
             name="email"
+            placeholder="Enter your email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Enter your Email address"
             style={inputStyle}
+            required
           />
         </div>
 
         <div style={inputGroupStyle}>
-          <label>Password:</label>
-          {/* Typo fixed: type="password" */}
+          <label>Password</label>
           <input
             type="password"
             name="password"
+            placeholder="••••••••"
             value={formData.password}
             onChange={handleChange}
-            placeholder="••••••••"
             style={inputStyle}
+            required
           />
         </div>
 
-        <button
-          type="submit"
-          style={{
-            padding: "10px",
-            backgroundColor: "#adff2f",
-            color: "black",
-            fontWeight: "bold",
-            cursor: "pointer",
-            borderRadius: "5px",
-            border: "none",
-            marginTop: "10px",
-          }}
-        >
-          Login
+        <button type="submit" style={submitBtnStyle}>
+          {isLogin ? "Login" : "Register"}
         </button>
+
+        {/* Bottom Toggle Option */}
+        <p style={{ marginTop: "15px", fontSize: "14px" }}>
+          {isLogin ? "Don't have an account? " : "Already have an account? "}
+          <span
+            onClick={() => setIsLogin(!isLogin)}
+            style={{
+              color: "#adff2f",
+              cursor: "pointer",
+              fontWeight: "bold",
+              textDecoration: "underline",
+            }}
+          >
+            {isLogin ? "Sign Up" : "Login"}
+          </span>
+        </p>
       </form>
     </div>
   );
 };
 
-// Reusable Input Styles
+// Styles
+const containerStyle = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  minHeight: "80vh",
+};
+
+const cardStyle = {
+  width: "320px",
+  backgroundColor: "#111827",
+  padding: "25px",
+  color: "white",
+  borderRadius: "8px",
+  display: "flex",
+  flexDirection: "column",
+  gap: "12px",
+  textAlign: "center",
+};
+
 const inputGroupStyle = {
   display: "flex",
   flexDirection: "column",
-  gap: "5px",
+  gap: "4px",
   textAlign: "left",
 };
 
@@ -128,7 +128,17 @@ const inputStyle = {
   border: "1px solid #374151",
   backgroundColor: "#1f2937",
   color: "white",
-  outline: "none",
 };
 
-export default Login;
+const submitBtnStyle = {
+  padding: "10px",
+  backgroundColor: "#adff2f",
+  color: "black",
+  fontWeight: "bold",
+  border: "none",
+  borderRadius: "5px",
+  cursor: "pointer",
+  marginTop: "10px",
+};
+
+export default AuthForm;
