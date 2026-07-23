@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 
-const AuthForm = () => {
-  // State to toggle between Login and Signup
+const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
 
-  // Form state
   const [formData, setFormData] = useState({
     fullName: "",
+    userName: "",
     email: "",
     password: "",
   });
@@ -15,10 +14,24 @@ const AuthForm = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Toggle Function with Form Reset
+  const handleToggle = () => {
+    setIsLogin(!isLogin);
+    setFormData({
+      fullName: "",
+      userName: "",
+      email: "",
+      password: "",
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isLogin) {
-      console.log("Logging in with:", formData.email, formData.password);
+      console.log("Logging in with:", {
+        email: formData.email,
+        password: formData.password,
+      });
     } else {
       console.log("Signing up with:", formData);
     }
@@ -29,20 +42,35 @@ const AuthForm = () => {
       <form onSubmit={handleSubmit} style={cardStyle}>
         <h2>{isLogin ? "Login" : "Sign Up"}</h2>
 
-        {/* Full Name sirf Signup ke vakt dikhega */}
+        {/* Full Name & UserName sirf Signup ke vakt dikhenge */}
         {!isLogin && (
-          <div style={inputGroupStyle}>
-            <label>Full Name</label>
-            <input
-              type="text"
-              name="fullName"
-              placeholder="Enter your name"
-              value={formData.fullName}
-              onChange={handleChange}
-              style={inputStyle}
-              required
-            />
-          </div>
+          <>
+            <div style={inputGroupStyle}>
+              <label>Full Name</label>
+              <input
+                type="text"
+                name="fullName"
+                placeholder="Enter your name"
+                value={formData.fullName}
+                onChange={handleChange}
+                style={inputStyle}
+                required
+              />
+            </div>
+
+            <div style={inputGroupStyle}>
+              <label>UserName</label>
+              <input
+                type="text"
+                name="userName"
+                placeholder="Set your username"
+                value={formData.userName}
+                onChange={handleChange}
+                style={inputStyle}
+                required
+              />
+            </div>
+          </>
         )}
 
         <div style={inputGroupStyle}>
@@ -79,7 +107,7 @@ const AuthForm = () => {
         <p style={{ marginTop: "15px", fontSize: "14px" }}>
           {isLogin ? "Don't have an account? " : "Already have an account? "}
           <span
-            onClick={() => setIsLogin(!isLogin)}
+            onClick={handleToggle}
             style={{
               color: "#adff2f",
               cursor: "pointer",
@@ -141,4 +169,4 @@ const submitBtnStyle = {
   marginTop: "10px",
 };
 
-export default AuthForm;
+export default Login;
