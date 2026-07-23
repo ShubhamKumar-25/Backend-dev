@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Counters from "./components/Counters";
 import GitProfile from "./components/GitProfile";
 import Timer from "./components/Timer";
+import Login from "./components/Login";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/" element={<Counters />} />
           <Route path="/git-profile" element={<GitProfile />} />
           <Route path="/timer" element={<Timer />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
     </Router>

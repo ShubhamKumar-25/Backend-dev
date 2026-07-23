@@ -25,6 +25,13 @@ const Navbar = () => {
         >
           Timer
         </NavLink>
+
+        <NavLink
+          to="/login"
+          style={({ isActive }) => (isActive ? activeLinkStyle : linkStyle)}
+        >
+          Login
+        </NavLink>
       </div>
     </nav>
   );
