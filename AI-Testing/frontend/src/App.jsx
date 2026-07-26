@@ -48,7 +48,7 @@ export default function App() {
       <textarea
         rows="8"
         style={{ width: "100%", padding: "10px", fontSize: "14px" }}
-        placeholder="Yaha apna JavaScript code chipkao (e.g. const arr = [1,2,3].map(x => x*2);)..."
+        placeholder="write your code here....."
         value={code}
         onChange={(e) => setCode(e.target.value)}
       />

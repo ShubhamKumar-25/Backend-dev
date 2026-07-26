@@ -27,9 +27,7 @@ app.post('/api/explain', async (req , res) => {
         }
 
         // to Give a AI instruction
-        const prompt = `
-        You are a helpful coding tutor. Explain the following any language of code code in very simple English in 3-4 short bullet points. you act like a senior developer and give answer with perfection:\n\n${codeSnippet}
-        `;
+        const prompt = `You are a helpful coding tutor. Explain the following JavaScript code in very simple Hinglish (Hindi + English) in 3-4 short bullet points:\n\n${codeSnippet}`;
 
         // gemini API call
         const response = await ai.models.generateContent({
