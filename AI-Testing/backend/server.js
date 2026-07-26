@@ -1,56 +1,55 @@
+// server.js
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
-const { GoogleGenAI } = require('@google/genai')
+const Groq = require('groq-sdk'); // 1. Groq import karo
+
 const app = express();
 
-
-// Middleware
-app.use(cors);
+app.use(cors());
 app.use(express.json());
 
-// initilisze gemini AI
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+// 2. Groq Client Initialize karo
+const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
-// real routing 
-app.post('/api/explain', async (req , res) => {
-    try {
-        
+app.post('/api/explain', async (req, res) => {
+  try {
+    const { codeSnippet } = req.body;
 
-        const { codeSnippet } = req.body;
+    if (!codeSnippet) {
+      return res.status(400).json({ error: 'Bhai, pehle thoda code toh bhejo!' });
+    }
 
-        if(!codeSnippet){
-            return res.status(400).json({
-                message: "Something went wrong",
-                error: "Bro give me some code"
-            })
-        }
+    const prompt = `You are a helpful coding tutor. Explain the following JavaScript code in simple Hinglish in 3 short bullet points:\n\n${codeSnippet}`;
 
-        // to Give a AI instruction
-        const prompt = `You are a helpful coding tutor. Explain the following JavaScript code in very simple Hinglish (Hindi + English) in 3-4 short bullet points:\n\n${codeSnippet}`;
+    // 3. Groq API Call (OpenAI-compatible format)
+    const completion = await groq.chat.completions.create({
+      messages: [
+        {
+          role: 'user',
+          content: prompt,
+        },
+      ],
+      // llama-3.3-70b-versatile ya llama-3.1-8b-instant sabse popular & fast hain
+      model: 'llama-3.3-70b-versatile',
+    });
 
-        // gemini API call
-        const response = await ai.models.generateContent({
-            model: 'gemini-2.5-flash',
-            contents: prompt
-        });
+    // 4. Output Extracted Text
+    const explanationText = completion.choices[0]?.message?.content || 'No response received.';
 
-        // for the response
-        res.json({
-            explanation: response.text
-        })
+    res.json({ 
+      explanation: explanationText 
+    });
 
-    } catch (error) {
-        console.error('error in AI Route', error);
-        res.status(500).json({
-            error: 'something went wrong when AI is answering'
-        });
-    };
+  } catch (error) {
+    console.error('--- GROQ API ERROR ---', error);
+    res.status(500).json({ 
+      error: `Backend Error: ${error.message || 'Groq call failed'}` 
+    });
+  }
 });
 
-
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log(`server is runnig on localhost: ${PORT}`);
-    
-})
+  console.log(`Server running on http://localhost:${PORT}`);
+});
