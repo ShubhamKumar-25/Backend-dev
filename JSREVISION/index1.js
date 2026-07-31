@@ -819,9 +819,26 @@ function step2(callback){
   }, 3000)
 }
 
-step1(() => {
-  step2(() => {
-    console.log("step 3: Chai ready hai....");
+// step1(() => {
+//   step2(() => {
+//     console.log("step 3: Chai ready hai....");
     
+//   })
+// })
+
+console.log("-------------------------------------------------------------------------");
+
+function delayTask(mesg){
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(mesg);
+      resolve();
+    }, 3000)
   })
-})
+}
+
+delayTask("Step 1: Pani boil ho gaya hai.....")
+.then(() => delayTask("Step 2: Chai patti dalo..."))
+.then(() => delayTask("Step 3: Chai ready hai...."))
+
+
