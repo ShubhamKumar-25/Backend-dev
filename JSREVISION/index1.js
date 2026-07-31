@@ -804,7 +804,7 @@ const f2 = function(){
 
 
 
-// Call back hell
+// Call back hell ........
 function step1(callback){
   setTimeout(() => {
     console.log("step 1: Pani boil ho gaya hai...");
@@ -828,6 +828,7 @@ function step2(callback){
 
 console.log("-------------------------------------------------------------------------");
 
+// Promise execution......
 function delayTask(mesg){
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -837,8 +838,17 @@ function delayTask(mesg){
   })
 }
 
-delayTask("Step 1: Pani boil ho gaya hai.....")
-.then(() => delayTask("Step 2: Chai patti dalo..."))
-.then(() => delayTask("Step 3: Chai ready hai...."))
+// delayTask("Step 1: Pani boil ho gaya hai.....")
+// .then(() => delayTask("Step 2: Chai patti dalo..."))
+// .then(() => delayTask("Step 3: Chai ready hai...."))
+
+console.log("----------------------------------------------------------------------------");
 
 
+async function chai(){
+  await delayTask("step 1: Pani boil ho gaya hai....");
+  await delayTask("step 2: chai patti dalo......");
+  await delayTask("Chai ready hai......");
+}
+
+chai();
