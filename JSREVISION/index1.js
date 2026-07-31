@@ -768,40 +768,60 @@ const f2 = function(){
 
 
 
-function fetchUserData(userId) {
-  return new Promise((resolve, reject) => {
-    console.log("Fetching user data...");
+// function fetchUserData(userId) {
+//   return new Promise((resolve, reject) => {
+//     console.log("Fetching user data...");
 
-    setTimeout(() => {
-      if (userId === 112) {
-        resolve({
-          id: 101,
-          name: "Rohan",
-          email: "rohan@example.com",
-          age: 22,
-          city: "Motihari",
-        });
-      } else {
-        reject(new Error("User not found!"));
-      }
-    }, 2000); 
-  });
+//     setTimeout(() => {
+//       if (userId === 112) {
+//         resolve({
+//           id: 101,
+//           name: "Rohan",
+//           email: "rohan@example.com",
+//           age: 22,
+//           city: "Motihari",
+//         });
+//       } else {
+//         reject(new Error("User not found!"));
+//       }
+//     }, 2000); 
+//   });
+// }
+// fetchUserData(112)
+//   .then((user) => {
+//     console.log("✅ User fetched successfully:", user);
+//     return user.email; // chaining: pass email forward
+//   })
+//   .then((email) => {
+//     console.log("📧 Sending welcome email to:", email);
+//   })
+//   .catch((error) => {
+//     console.error("❌ Error occurred:", error.message);
+//   })
+//   .finally(() => {
+//     console.log("This block always executed weither function is executed or not");
+//   });
+
+
+
+// Call back hell
+function step1(callback){
+  setTimeout(() => {
+    console.log("step 1: Pani boil ho gaya hai...");
+    callback();
+  }, 2000);
 }
-fetchUserData(112)
-  .then((user) => {
-    console.log("✅ User fetched successfully:", user);
-    return user.email; // chaining: pass email forward
-  })
-  .then((email) => {
-    console.log("📧 Sending welcome email to:", email);
-  })
-  .catch((error) => {
-    console.error("❌ Error occurred:", error.message);
-  })
-  .finally(() => {
-    console.log("This block always executed weither function is executed or not");
-  });
 
+function step2(callback){
+  setTimeout(() => {
+    console.log("step 2: Chai patti dalo....");
+    callback();
+  }, 3000)
+}
 
-
-  
+step1(() => {
+  step2(() => {
+    console.log("step 3: Chai ready hai....");
+    
+  })
+})
