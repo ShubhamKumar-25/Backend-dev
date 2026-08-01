@@ -875,26 +875,57 @@ function delayTask(mesg){
 
 
 
-function outer(){
-  let count = 0;
-  function inner(){
-    return count++;
-  }
-  return inner;
-}
-const counter = outer();
-console.log(counter()); 
+// function outer(){
+//   let count = 0;
+//   function inner(){
+//     return count++;
+//   }
+//   return inner;
+// }
+// const counter = outer();
+// console.log(counter()); 
 
 
-function parent(){
-  let name1 = "Rohan Gupta";
-  function child1(){
-    let name2 = "Shubham Kumar";
-    console.log(`Hello, my name is ${name1}`);
+// function parent(){
+//   let name1 = "Rohan Gupta";
+//   function child1(){
+//     let name2 = "Shubham Kumar";
+//     console.log(`Hello, my name is ${name1}`);
+//   }
+//   return child1;
+//   function child2(){
+//     console.log(`Hello, my name is ${name2}`);
+//   }
+// }
+// parent()();
+
+
+
+
+
+function Parent(){
+  let name = "Rohan Gupta";
+
+  function Child1(){
+    console.log(`Hello, my name is ${name}`);
   }
-  return child1;
-  function child2(){
-    console.log(`Hello, my name is ${name2}`);
+
+  function Child2(){
+    console.log(`Welcome to the world of JavaScript, ${name}`);
+  }
+
+  function Child3(){
+    console.log(`Here i am learning about clouser in javascript, ${name}`);
+  }
+
+  return {
+    Child1,
+    Child2,
+    Child3
   }
 }
-parent()();
+
+const obj = Parent();
+obj.Child1();
+obj.Child2();
+obj.Child3();
