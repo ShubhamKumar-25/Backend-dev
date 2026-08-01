@@ -856,19 +856,45 @@ function delayTask(mesg){
 // console.log('--------------------------------------------------------------------------------');
 
 
-for(var i=1; i<=3; i++){
-  setTimeout(() => {
-    console.log(i)
-  }, 2000)
+// for(var i=1; i<=3; i++){
+//   setTimeout(() => {
+//     console.log(i)
+//   }, 2000)
 
+// }
+
+// setTimeout(() => {{
+//   console.log("-----------------------------------------------------------------")
+// }},3000)
+
+// for(let i=1; i<=3; i++){
+//   setTimeout(() => {
+//     console.log(i)
+//   },4000)
+// }
+
+
+
+function outer(){
+  let count = 0;
+  function inner(){
+    return count++;
+  }
+  return inner;
 }
+const counter = outer();
+console.log(counter()); 
 
-setTimeout(() => {{
-  console.log("-----------------------------------------------------------------")
-}},3000)
 
-for(let i=1; i<=3; i++){
-  setTimeout(() => {
-    console.log(i)
-  },4000)
+function parent(){
+  let name1 = "Rohan Gupta";
+  function child1(){
+    let name2 = "Shubham Kumar";
+    console.log(`Hello, my name is ${name1}`);
+  }
+  return child1;
+  function child2(){
+    console.log(`Hello, my name is ${name2}`);
+  }
 }
+parent()();
