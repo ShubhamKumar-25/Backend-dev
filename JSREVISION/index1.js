@@ -903,29 +903,62 @@ function delayTask(mesg){
 
 
 
-function Parent(){
-  let name = "Rohan Gupta";
+// function Parent(){
+//   let name = "Rohan Gupta";
 
-  function Child1(){
-    console.log(`Hello, my name is ${name}`);
-  }
+//   function Child1(){
+//     console.log(`Hello, my name is ${name}`);
+//   }
 
-  function Child2(){
-    console.log(`Welcome to the world of JavaScript, ${name}`);
-  }
+//   function Child2(){
+//     console.log(`Welcome to the world of JavaScript, ${name}`);
+//   }
 
-  function Child3(){
-    console.log(`Here i am learning about clouser in javascript, ${name}`);
-  }
+//   function Child3(){
+//     console.log(`Here i am learning about clouser in javascript, ${name}`);
+//   }
 
-  return {
-    Child1,
-    Child2,
-    Child3
-  }
+//   return {
+//     Child1,
+//     Child2,
+//     Child3
+//   }
+// }
+
+// const obj = Parent();
+// obj.Child1();
+// obj.Child2();
+// obj.Child3();
+
+
+
+
+function createBankAccount(initialBalance) {
+    // Private variable (not directly accessible outside)
+    let balance = initialBalance;
+
+    return {
+        deposit: function(amount) {
+            balance += amount;
+            console.log(`Deposited: ₹${amount}, New Balance: ₹${balance}`);
+        },
+        withdraw: function(amount) {
+            if (amount <= balance) {
+                balance -= amount;
+                console.log(`Withdrew: ₹${amount}, Remaining Balance: ₹${balance}`);
+            } else {
+                console.log("Insufficient funds!");
+            }
+        },
+        checkBalance: function() {
+            console.log(`Current Balance: ₹${balance}`);
+        }
+    };
 }
 
-const obj = Parent();
-obj.Child1();
-obj.Child2();
-obj.Child3();
+// Usage
+const myAccount = createBankAccount(1000);
+
+myAccount.deposit(500);     
+myAccount.withdraw(200);    
+myAccount.checkBalance();   
