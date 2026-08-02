@@ -934,7 +934,6 @@ function delayTask(mesg){
 
 
 function createBankAccount(initialBalance) {
-    // Private variable (not directly accessible outside)
     let balance = initialBalance;
 
     return {
