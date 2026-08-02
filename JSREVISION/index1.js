@@ -956,8 +956,8 @@ function createBankAccount(initialBalance) {
 }
 
 // Usage
-const myAccount = createBankAccount(1000);
+const myAccount = createBankAccount(2000);
 
 myAccount.deposit(500);     
-myAccount.withdraw(200);    
+myAccount.withdraw(1000);    
 myAccount.checkBalance();   
