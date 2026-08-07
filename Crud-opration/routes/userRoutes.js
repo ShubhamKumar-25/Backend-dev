@@ -14,8 +14,8 @@ router.post('/createUser', contrellers.createUser);
 
 router.put('/updateUser/:id', contrellers.updateUser);
 
-router.post('/updateUser/:id', contrellers.patchUpdate);
+router.patch('/updateUser/:id', contrellers.patchUpdate);
 
-router.delete('/deleteUser', contrellers.deleteUser);
+router.delete('/deleteUser/:id', contrellers.deleteUser);
 
 module.exports = router; 

@@ -87,66 +87,131 @@ async function createUser(req, res){
     };
 };
 
-// update user
-async function updateUser(req, res){
+// // update user
+// async function updateUser(req, res){
+//     try {
+//         const userIndex = User.findIndex(u => u.id === parseInt(req.params.id));
+//         if(userIndex === -1){
+//             return res.status(400).json({
+//                 success: false,
+//                 message: "user not Found",
+//                 error: "No one user to this id"
+//             })
+//         }
+
+//         const { name, email, age, city } = req.body;
+//         User[userIndex] = {
+//             ...User[userIndex],
+//             name, 
+//             email,
+//             age, 
+//             city
+//         }
+//         res.status(200).json({
+//             success: true,
+//             message: "User updated successfully",
+//             data: User[userIndex]
+//         })
+//     } catch (error) {
+//         res.status(500).json({
+//             success: false,
+//             message: "Internal server error",
+//             error: error.message
+//         })
+//     };
+// };
+
+// // Partally Updated 
+// async function patchUpdate(req, res){
+//     try {
+//         const index = User.find(u => u.id === parseInt(req.params.id));
+//         if(!index){
+//            return res.status(404).json({
+//             success: false,
+//             message: "User not Found",
+//             error: "User not found with this id"
+//         })
+
+//         Object.assign(index, req.body)
+//         res.status(200).json({
+//             success: true,
+//             message: "User updated Successfully",
+//             data: index
+//         })
+//     }
+//     } catch (error) {
+//         res.status(500).json({
+//             success: false,
+//             message: "Internal server error",
+//             error: error.message
+//         })
+//     };
+// };
+
+
+// PUT - Full Update
+async function updateUser(req, res) {
     try {
-        const userIndex = User.findIndex(u => u.id === parseInt(req.params.id));
-        if(userIndex === -1){
+        const userIndex = users.findIndex(u => u.id === parseInt(req.params.id));
+        if (userIndex === -1) {
             return res.status(400).json({
                 success: false,
-                message: "user not Found",
-                error: "No one user to this id"
-            })
+                message: "User not Found",
+                error: "No user with this id"
+            });
         }
 
         const { name, email, age, city } = req.body;
-        User[userIndex] = {
-            ...User[userIndex],
-            name, 
+        users[userIndex] = {
+            ...users[userIndex],
+            name,
             email,
-            age, 
+            age,
             city
-        }
+        };
+
         res.status(200).json({
             success: true,
             message: "User updated successfully",
-            data: userIndex[userIndex]
-        })
+            data: users[userIndex]
+        });
     } catch (error) {
         res.status(500).json({
             success: false,
             message: "Internal server error",
             error: error.message
-        })
-    };
-};
+        });
+    }
+}
 
-// Partally Updated 
-async function patchUpdate(req, res){
+// PATCH - Partial Update
+async function patchUpdate(req, res) {
     try {
-        const index = User.find(u => u.id === parseInt(req.params.id));
-        if(!index){
-           return res.status(404).json({
-            success: false,
-            message: "User not Found",
-            error: "User not found with this id"
-        })
+        const user = users.find(u => u.id === parseInt(req.params.id));
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: "User not Found",
+                error: "User not found with this id"
+            });
+        }
 
-        Object.assign(index, req.body)
+        Object.assign(user, req.body);
+
         res.status(200).json({
             success: true,
-            message: "User updated Successfully",
-            data: index
-        })
-    }
+            message: "User updated successfully",
+            data: user
+        });
     } catch (error) {
         res.status(500).json({
             success: false,
             message: "Internal server error",
             error: error.message
-        })
-    };
-};
+        });
+    }
+}
+
 
 // User delete
 async function deleteUser(req, res){
