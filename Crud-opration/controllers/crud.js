@@ -3,7 +3,6 @@ const e = require("express");
 const User = require("../model/user");
 
 
-
 async function getAllUsers(req, res){
     try{
         res.status(200).json({
@@ -22,9 +21,7 @@ async function getAllUsers(req, res){
     };
 };
 
-
 // User Fetched by ID
-
 async function getUserById(req, res){
     try{
         const userId = User.find(u => u.id === parseInt(req.params.id));
@@ -87,6 +84,7 @@ async function createUser(req, res){
     };
 };
 
+// fully update
 async function updateUser(req, res) {
     try {
         const userIndex = User.findIndex(u => u.id === parseInt(req.params.id));
@@ -121,7 +119,7 @@ async function updateUser(req, res) {
     }
 }
 
-
+// Partially update
 async function patchUpdate(req, res) {
     try {
         const user = User.find(u => u.id === parseInt(req.params.id));
