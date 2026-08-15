@@ -47,3 +47,25 @@ if(true){
 //console.log(isDev);
 
 
+// Function Declaration
+function add(a , b){
+    return a+b;
+}
+const res = add(10, 10);
+console.log(res);
+
+
+// Function expression
+const add1 = function(x, y){
+    return x + y;
+}
+const res1 = add1(20 , 20);
+console.log(res1);
+
+
+// Arrow Function
+const sum = (l, m) => {
+    return l * m;
+}
+const res3 = sum(11, 2);
+console.log(res3);
