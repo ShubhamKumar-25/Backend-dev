@@ -121,18 +121,78 @@
 // }
 // aa();
 
-const country = "India";
-function outer(){
-    const State = "Punjab";
-    console.log(State);
-    console.log(country);
-    // console.log(city); isse hum outer function ke under access nahi kar sakte hai....
-    function inner(){ // ye inner function sabhi ko access kar sakta hai.....
-        let city = "Mohali";
-        // console.log(country);
-        // console.log(State);
-        // console.log(city);
-    }
-    inner();
+// const country = "India";
+// function outer(){
+//     const State = "Punjab";
+//     console.log(State);
+//     console.log(country);
+//     // console.log(city); isse hum outer function ke under access nahi kar sakte hai....
+//     function inner(){ // ye inner function sabhi ko access kar sakta hai.....
+//         let city = "Mohali";
+//         // console.log(country);
+//         // console.log(State);
+//         // console.log(city);
+//     }
+//     inner();
+// }
+// outer();
+
+
+
+
+// console.log("hello i am first...");
+
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         let isStudent = true;
+//     if(isStudent){
+//         resolve("Your are a student...")
+//     }
+//     else{
+//         reject("No You are a not a student...")
+//     }
+//     }, 2000);
+// })
+// promise.then((data) => {
+//     console.log(data);
+// }).catch((error) => {
+//     console.log(error);
+// });
+
+// function fun3(){
+//     setTimeout(() => {
+//         console.log("i am settime out....");
+        
+//     }, 3000)
+// };
+// fun3();
+
+// console.log("hello i am end");
+
+
+// function outer(){
+//     let count = 1;
+//     function inner(){
+//         return count++;
+//     }
+//     return inner;
+// }
+// let counter = outer();
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+
+
+
+function outer() {
+    let x = 10;
+
+    return function inner() {
+        console.log(x);
+    };
 }
-outer();
+
+const fn = outer();
+
+fn();
