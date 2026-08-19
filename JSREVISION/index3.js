@@ -183,16 +183,39 @@
 // console.log(counter());
 // console.log(counter());
 
+ 
 
+// function outer() {
+//     let x = 10;
+
+//     return function inner() {
+//         console.log(x);
+//     };
+// }
+
+// const fn = outer();
+
+// fn();
+
+
+
+
+const a = 10;
 
 function outer() {
-    let x = 10;
 
-    return function inner() {
-        console.log(x);
-    };
+    const b = 20;
+
+    function inner() {
+
+        const c = 30;
+
+        console.log(c);
+        console.log(b);
+        console.log(a);
+    }
+
+    inner();
 }
 
-const fn = outer();
-
-fn();
+outer();
