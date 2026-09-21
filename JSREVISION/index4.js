@@ -23,14 +23,14 @@
 //     console.log("--------------------------------------");
 // }, 2000);
 
-function delayTask(msg){
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            console.log(msg);
-            resolve();
-        }, 2000)
-    })
-}
+// function delayTask(msg){
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             console.log(msg);
+//             resolve();
+//         }, 2000)
+//     })
+// }
 
 // delayTask("Oil hot ho gaya hai.")
 //     .then(() => delayTask("Abb pakaudhe daalo."))
@@ -38,9 +38,9 @@ function delayTask(msg){
 
 
 
-async function makeTea() {
-    await delayTask("Pani ubal gaya hai..");
-    await delayTask("Abb chai patti dalo..");
-    await delayTask("Chai ready hai..");
-}
-makeTea();
+// async function makeTea() {
+//     await delayTask("Pani ubal gaya hai..");
+//     await delayTask("Abb chai patti dalo..");
+//     await delayTask("Chai ready hai..");
+// }
+// makeTea();
