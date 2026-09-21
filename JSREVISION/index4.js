@@ -55,3 +55,9 @@ function processUser(callback) {
 }
 
 processUser(greet);
+
+
+let names = ["Apple", "Banana", "Mango"]
+names.forEach((name) => {
+    console.log(name);
+})
