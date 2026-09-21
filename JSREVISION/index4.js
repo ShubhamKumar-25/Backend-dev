@@ -44,3 +44,14 @@
 //     await delayTask("Chai ready hai..");
 // }
 // makeTea();
+
+
+function greet(name) {
+    return "Hello " + name;
+}
+
+function processUser(callback) {
+    console.log(callback("Shubham"));
+}
+
+processUser(greet);
