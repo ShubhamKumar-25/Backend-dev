@@ -99,13 +99,26 @@
 // Show();
 
 // lexical scoping 
-const company = "Amazon";
+// const company = "Amazon";
+// function outer(){
+//     let name = "Shubham Gupta";
+//     function inner(){
+//         console.log(company);
+//         console.log(name);
+//     }
+//     inner();
+// }
+// outer();
+
+// Clouser in Javascript
 function outer(){
-    let name = "Shubham Gupta";
-    function inner(){
-        console.log(company);
-        console.log(name);
+    let count = 1;
+    return function inner(){
+        return count++;
     }
-    inner();
 }
-outer();
+let counter = outer();
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
