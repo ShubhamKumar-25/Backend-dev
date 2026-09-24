@@ -3,7 +3,6 @@
 // let company = "Google";
 // function outer(){
 //     let name = "Rohan Gupta";
-
 //     function inner(){
 //         console.log(name);
 //         console.log(company);
@@ -79,22 +78,34 @@
 // }
 // showUser();
 
-function fetchUser(){
-    return new Promise((resolve, resject) => {
-        let success = true;
-        setTimeout(() => {
-            if(success){
-                resolve("One Day i become a richest person in my state.");
-            }
-            else{
-                resject("Something went wrong.")
-            }
-        }, 2000)
-    })
-}
+// function fetchUser(){
+//     return new Promise((resolve, resject) => {
+//         let success = true;
+//         setTimeout(() => {
+//             if(success){
+//                 resolve("One Day i become a richest person in my state.");
+//             }
+//             else{
+//                 resject("Something went wrong.")
+//             }
+//         }, 2000)
+//     })
+// }
 
-async function Show(){
-    let result = await fetchUser();
-    console.log(result);
+// async function Show(){
+//     let result = await fetchUser();
+//     console.log(result);
+// }
+// Show();
+
+// lexical scoping 
+const company = "Amazon";
+function outer(){
+    let name = "Shubham Gupta";
+    function inner(){
+        console.log(company);
+        console.log(name);
+    }
+    inner();
 }
-Show();
+outer();
