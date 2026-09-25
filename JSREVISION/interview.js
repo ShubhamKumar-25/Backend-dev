@@ -101,7 +101,7 @@
 
 
 
-// lexical scoping 
+// lexical scoping
 // const company = "Amazon";
 // function outer(){
 //     let name = "Shubham Gupta";
@@ -127,18 +127,19 @@
 // console.log(counter());
 
 // Promise
-const promise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        let isStudent = true;
-        if(isStudent){
-            resolve("Yes, This is our collage student.")
-        }
-        else{
-            reject("No, This is not a student");
-        }
-    }, 2000)
-})
-promise
-.then((data) => console.log(data))
-.catch((err) => console.log(err))
-.finally(() => console.log("Finally block is always executed."));
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         let isStudent = true;
+//         if(isStudent){
+//             resolve("Yes, This is our collage student.")
+//         }
+//         else{
+//             reject("No, This is not a student");
+//         }
+//     }, 2000)
+// })
+// promise
+// .then((data) => console.log(data))
+// .catch((err) => console.log(err))
+// .finally(() => console.log("Finally block is always executed."));
+
