@@ -145,13 +145,13 @@
 // .finally(() => console.log("Finally block is always executed."));
 
 // async / await
-setTimeout(() => {
-    function fetchUser(){
-        return Promise.resolve("Rohan Gupta");
-    }
-     async function showUser(){
-        let name = await fetchUser();
-        console.log(name);
-    }
-    showUser();
-}, 2000)
+// setTimeout(() => {
+//     function fetchUser(){
+//         return Promise.resolve("Rohan Gupta");
+//     }
+//      async function showUser(){
+//         let name = await fetchUser();
+//         console.log(name);
+//     }
+//     showUser();
+// }, 2000)
