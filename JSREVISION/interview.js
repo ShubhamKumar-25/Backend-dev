@@ -52,6 +52,7 @@
 // fetchUser()
 // .then((mes) => console.log(mes));
 
+
 // setTimeout(() => {
 //     console.log("---------------------------------------------------");
 // }, 2000)
@@ -143,3 +144,14 @@
 // .catch((err) => console.log(err))
 // .finally(() => console.log("Finally block is always executed."));
 
+// async / await
+setTimeout(() => {
+    function fetchUser(){
+        return Promise.resolve("Rohan Gupta");
+    }
+     async function showUser(){
+        let name = await fetchUser();
+        console.log(name);
+    }
+    showUser();
+}, 2000)
