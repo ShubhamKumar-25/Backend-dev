@@ -98,3 +98,10 @@ let bb = aa.filter((nn) => {
 console.log(bb);
 
 console.log("=======================================================");
+
+// reduce
+const nums = [200, 300, 400];
+const res = nums.reduce((sum, num) => {
+    return sum + num;
+}, 0);
+console.log(res);
