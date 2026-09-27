@@ -46,62 +46,70 @@
 // makeTea();
 
 
-function greet(name) {
-    return "Hello " + name;
-}
+// function greet(name) {
+//     return "Hello " + name;
+// }
 
-function processUser(callback) {
-    console.log(callback("Shubham"));
-}
+// function processUser(callback) {
+//     console.log(callback("Shubham"));
+// }
 
-processUser(greet);
-
-
-let names = ["Apple", "Banana", "Mango"]
-names.forEach((name) => {
-    console.log(name);
-})
+// processUser(greet);
 
 
-let num = [1, 2, 3, 4];
-let result = num.forEach((num1) => {
-    return num1 + 3;
-})
-console.log(result);
-
-console.log("---------------------------------------------------------------");
-
-let num2 = [1, 2, 3, 4, 5];
-let result2 = num2.map((num3) => {
-    return num3 + 2
-})
-console.log(result2);
-
-console.log("-----------------------------------------------------------------");
-
-// const prices = [100, 300, 593, 653];
-// const double = prices.map((pri) => {
-//     return pri * 1.10;
+// let names = ["Apple", "Banana", "Mango"]
+// names.forEach((name) => {
+//     console.log(name);
 // })
-// console.log(double);
 
 
-const prices = [100, 200, 300];
-const newPrices = prices.map(price => +(price * 1.10).toFixed(2));
-console.log(newPrices);
+// let num = [1, 2, 3, 4];
+// let result = num.forEach((num1) => {
+//     return num1 + 3;
+// })
+// console.log(result);
 
-console.log("====================================================");
-let aa = [20, 34, 89, 10, 55];
-let bb = aa.filter((nn) => {
-    return nn >= 40;
+// console.log("---------------------------------------------------------------");
+
+// let num2 = [1, 2, 3, 4, 5];
+// let result2 = num2.map((num3) => {
+//     return num3 + 2
+// })
+// console.log(result2);
+
+// console.log("-----------------------------------------------------------------");
+
+// // const prices = [100, 300, 593, 653];
+// // const double = prices.map((pri) => {
+// //     return pri * 1.10;
+// // })
+// // console.log(double);
+
+
+// const prices = [100, 200, 300];
+// const newPrices = prices.map(price => +(price * 1.10).toFixed(2));
+// console.log(newPrices);
+
+// console.log("====================================================");
+// let aa = [20, 34, 89, 10, 55];
+// let bb = aa.filter((nn) => {
+//     return nn >= 40;
+// })
+// console.log(bb);
+
+// console.log("=======================================================");
+
+// // reduce
+// const nums = [200, 300, 400];
+// const res = nums.reduce((sum, num) => {
+//     return sum + num;
+// }, 0);
+// console.log(res);
+
+
+// filter 
+const num = [10, 20, 30, 40, 50];
+const fill = num.filter((num) => {
+    return num > 30;
 })
-console.log(bb);
-
-console.log("=======================================================");
-
-// reduce
-const nums = [200, 300, 400];
-const res = nums.reduce((sum, num) => {
-    return sum + num;
-}, 0);
-console.log(res);
+console.log(fill);
