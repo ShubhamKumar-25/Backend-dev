@@ -107,21 +107,21 @@
 // console.log(res);
 
 
-// filter 
+// filter
 // const num = [10, 20, 30, 40, 50];
 // const fill = num.filter((num) => {
 //     return num > 30;
 // })
 // console.log(fill);
 
-// Lexical Scoping 
-let company = "Amazon";
-function outer(){
-    const isStudent = true;
-    function inner(){
-        console.log(company);
-        console.log(isStudent);
-    }
-    inner();
-}
-outer();
+// Lexical Scoping
+// let company = "Amazon";
+// function outer(){
+//     const isStudent = true;
+//     function inner(){
+//         console.log(company);
+//         console.log(isStudent);
+//     }
+//     inner();
+// }
+// outer();
