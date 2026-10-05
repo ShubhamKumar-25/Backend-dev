@@ -155,3 +155,14 @@
 //     }
 //     showUser();
 // }, 2000)
+
+// Real use of Clouser
+function createTheme(theme){
+    return function changeTheme(){
+        console.log(`Theme changed to ${theme}`);
+    }
+}
+const darkTheme = createTheme(`Dark`);
+const lightTheme = createTheme(`Light`);
+darkTheme();
+lightTheme();
