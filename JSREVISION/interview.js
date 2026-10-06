@@ -189,10 +189,7 @@ function createBankAccount(initialBalance) {
     }
   };
 }
-
-// --- Usage ---
 const myAccount = createBankAccount(1000);
-
 console.log(myAccount.getBalance()); 
 console.log(myAccount.deposit(500));  
 console.log(myAccount.withdraw(200)); 
