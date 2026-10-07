@@ -167,30 +167,4 @@
 // darkTheme();
 // lightTheme();
 
-// =============================================
-// Another example of clouser
-// =============================================
-function createBankAccount(initialBalance) {
-  let balance = initialBalance;
-  return {
-    deposit: function (amount) {
-      balance += amount;
-      return `Deposited: ₹${amount}. Current Balance: ₹${balance}`;
-    },
-    withdraw: function (amount) {
-      if (amount > balance) {
-        return "Insufficient funds!";
-      }
-      balance -= amount;
-      return `Withdrew: ₹${amount}. Current Balance: ₹${balance}`;
-    },
-    getBalance: function () {
-      return `Current Balance: ₹${balance}`;
-    }
-  };
-}
-const myAccount = createBankAccount(1000);
-console.log(myAccount.getBalance()); 
-console.log(myAccount.deposit(500));  
-console.log(myAccount.withdraw(200)); 
-console.log(myAccount.balance); 
+console.log("---------------------------------------------------");
