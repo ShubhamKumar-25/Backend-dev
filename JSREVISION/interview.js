@@ -169,20 +169,43 @@
 
 console.log("---------------------------------------------------");
 // Callback Hell
-function step1(callback){
+// function step1(callback){
+//     setTimeout(() => {
+//         console.log("Pani ubal gaya hai");
+//         callback();
+//     }, 1000);
+// }
+// function step2(callback){
+//     setTimeout(() => {
+//         console.log("Chai patti dalo.");
+//         callback();
+//     }, 1000)
+// }
+// step1(() => {
+//     step2(() => {
+//         console.log("Chai ready hai aa ke le jao.");
+//     })
+// })
+
+// Promise chaining
+const promise1 = new Promise((resolve, reject) => {
     setTimeout(() => {
-        console.log("Pani ubal gaya hai");
-        callback();
-    }, 1000);
-}
-function step2(callback){
-    setTimeout(() => {
-        console.log("Chai patti dalo.");
-        callback();
-    }, 1000)
-}
-step1(() => {
-    step2(() => {
-        console.log("Chai ready hai aa ke le jao.");
-    })
+        let isStudent = true;
+        if(isStudent){
+            resolve("Yes, This is our collage student.");
+        }
+        else{
+            reject("No, This is not a student.");
+        }
+    }, 2000)
 })
+promise1
+.then((data) => {
+    console.log(data)
+})
+.catch((err) =>{
+    console.log(err)
+})
+.finally(() => {
+    console.log("Finally block is always executed.");
+});
