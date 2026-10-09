@@ -167,7 +167,7 @@
 // darkTheme();
 // lightTheme();
 
-console.log("---------------------------------------------------");
+// console.log("---------------------------------------------------");
 // Callback Hell
 // function step1(callback){
 //     setTimeout(() => {
@@ -188,24 +188,77 @@ console.log("---------------------------------------------------");
 // })
 
 // Promise chaining
-const promise1 = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        let isStudent = true;
-        if(isStudent){
-            resolve("Yes, This is our collage student.");
-        }
-        else{
-            reject("No, This is not a student.");
-        }
-    }, 2000)
-})
-promise1
-.then((data) => {
-    console.log(data)
-})
-.catch((err) =>{
-    console.log(err)
-})
-.finally(() => {
-    console.log("Finally block is always executed.");
-});
+// const promise1 = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         let isStudent = true;
+//         if(isStudent){
+//             resolve("Yes, This is our collage student.");
+//         }
+//         else{
+//             reject("No, This is not a student.");
+//         }
+//     }, 2000)
+// })
+// promise1
+// .then((data) => {
+//     console.log(data)
+// })
+// .catch((err) =>{
+//     console.log(err)
+// })
+// .finally(() => {
+//     console.log("Finally block is always executed.");
+// });
+
+// Async / Await
+// async function fetchUser() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             let isStudent = false;
+//             if (isStudent) {
+//                 resolve("Yes, This is our collage student.");
+//             } else {
+//                 reject("No, This is not a student.");
+//             }
+//         }, 2000);
+//     });
+// }
+
+// async function showUser() {
+//     try {
+//         let result = await fetchUser();
+//         console.log(result);
+//     } catch (error) {
+//         console.log(error);
+//     } finally {
+//         console.log("Finally block is always executed.");
+//     }
+// }
+// showUser();
+
+
+// Heigher Order Function with simple example
+// function higherOrderFunction(callback) {
+//     console.log("This is a higher order function.");
+//     callback();
+// }
+
+// higherOrderFunction(() => {
+//     console.log("This is a callback function.");
+// });
+
+// console.log("---------------------------------------------------");
+
+// Heigher Order Function with Array methods
+const numbers = [2, 3, 4, 5, 6, 7, 8, 9];
+const square = numbers.map((num) => num * num);
+console.log(square);
+// filter 
+const evenNumbers = square.filter((num) => num % 2 === 0);
+console.log(evenNumbers);
+// reduce
+const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+console.log(sum);
+// reduce2
+const sum2 = evenNumbers.reduce((acc, curr) => acc + curr, 0);
+console.log(sum2);
