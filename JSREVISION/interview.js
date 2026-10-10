@@ -296,3 +296,14 @@ function factorial(n) {
     return n * factorial(n - 1);
 }
 console.log(factorial(5)); 
+
+// 6. Callback Function -> A callback function is a function that is passed as an argument to another function and is executed after some operation has been completed.
+function fetchData(callback) {
+    setTimeout(() => {
+        const data = { name: "Rohan Gupta", age: 25, city: "Motihari" };
+        callback(data);
+    }, 2000);
+}
+fetchData((data) => {
+    console.log(data);
+});
