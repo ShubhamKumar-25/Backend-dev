@@ -250,15 +250,49 @@
 // console.log("---------------------------------------------------");
 
 // Heigher Order Function with Array methods
-const numbers = [2, 3, 4, 5, 6, 7, 8, 9];
-const square = numbers.map((num) => num * num);
-console.log(square);
-// filter 
-const evenNumbers = square.filter((num) => num % 2 === 0);
-console.log(evenNumbers);
-// reduce
-const sum = numbers.reduce((acc, curr) => acc + curr, 0);
-console.log(sum);
-// reduce2
-const sum2 = evenNumbers.reduce((acc, curr) => acc + curr, 0);
-console.log(sum2);
+// const numbers = [2, 3, 4, 5, 6, 7, 8, 9];
+// const square = numbers.map((num) => num * num);
+// console.log(square);
+// // filter 
+// const evenNumbers = square.filter((num) => num % 2 === 0);
+// console.log(evenNumbers);
+// // reduce
+// const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+// console.log(sum);
+// // reduce2
+// const sum2 = evenNumbers.reduce((acc, curr) => acc + curr, 0);
+// console.log(sum2);
+
+
+// All type of function in Javascript revision
+// 1. Function Declaration
+function greet() {
+    console.log("Hello, Good Morning!");
+}
+greet();
+
+// 2. Function Expression
+const greet2 = function () {
+    console.log("Hello, Good Afternoon!");
+}
+greet2();
+
+// 3. Arrow Function -> An arrow function expression is a compact alternative to a traditional function expression, but is limited and can't be used in all situations.
+const greet3 = () => {
+    console.log("Hello, Good Evening!");
+}
+greet3();
+
+// 4. IIFE (Immediately Invoked Function Expression)-> A IIFE is a function that runs as soon as it is defined.
+(function () {
+    console.log("Hello, Good Night!");
+})();
+
+// 5. Recursive Function -> A recursive function is a function that calls itself.
+function factorial(n) {
+    if (n === 0) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+console.log(factorial(5)); 
