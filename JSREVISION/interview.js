@@ -266,44 +266,66 @@
 
 // All type of function in Javascript revision
 // 1. Function Declaration
-function greet() {
-    console.log("Hello, Good Morning!");
-}
-greet();
+// function greet() {
+//     console.log("Hello, Good Morning!");
+// }
+// greet();
 
 // 2. Function Expression
-const greet2 = function () {
-    console.log("Hello, Good Afternoon!");
-}
-greet2();
+// const greet2 = function () {
+//     console.log("Hello, Good Afternoon!");
+// }
+// greet2();
 
 // 3. Arrow Function -> An arrow function expression is a compact alternative to a traditional function expression, but is limited and can't be used in all situations.
-const greet3 = () => {
-    console.log("Hello, Good Evening!");
-}
-greet3();
+// const greet3 = () => {
+//     console.log("Hello, Good Evening!");
+// }
+// greet3();
 
 // 4. IIFE (Immediately Invoked Function Expression)-> A IIFE is a function that runs as soon as it is defined.
-(function () {
-    console.log("Hello, Good Night!");
-})();
+// (function () {
+//     console.log("Hello, Good Night!");
+// })();
 
 // 5. Recursive Function -> A recursive function is a function that calls itself.
-function factorial(n) {
-    if (n === 0) {
-        return 1;
-    }
-    return n * factorial(n - 1);
-}
-console.log(factorial(5)); 
+// function factorial(n) {
+//     if (n === 0) {
+//         return 1;
+//     }
+//     return n * factorial(n - 1);
+// }
+// console.log(factorial(5)); 
 
 // 6. Callback Function -> A callback function is a function that is passed as an argument to another function and is executed after some operation has been completed.
-function fetchData(callback) {
-    setTimeout(() => {
-        const data = { name: "Rohan Gupta", age: 25, city: "Motihari" };
-        callback(data);
-    }, 2000);
+// function fetchData(callback) {
+//     setTimeout(() => {
+//         const data = { name: "Rohan Gupta", age: 25, city: "Motihari" };
+//         callback(data);
+//     }, 2000);
+// }
+// fetchData((data) => {
+//     console.log(data);
+// });
+
+
+// 7. Higher Order Function -> A higher order function is a function that takes another function as an argument or returns a function as a result.
+// function higherOrderFunction(callback) {
+//     console.log("This is a higher order function.");
+//     callback();
+// }
+// higherOrderFunction(() => {
+//     console.log("This is a callback function.");
+// });
+
+// 8. Generator Function -> A generator function is a function that can be exited and later re-entered. Its context (variable bindings) will be saved across re-entrances.
+function* generatorFunction() {
+    yield 1;
+    yield 2;
+    yield 3;
 }
-fetchData((data) => {
-    console.log(data);
-});
+const gen = generatorFunction();
+console.log(gen.next().value); 
+console.log(gen.next().value); 
+console.log(gen.next().value);
+console.log(gen.next().value);
