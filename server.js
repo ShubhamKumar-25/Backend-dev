@@ -194,5 +194,4 @@ app.delete('/user/:id', async (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server is running on localhost ${PORT}`);
-
 })

@@ -319,13 +319,16 @@
 // });
 
 // 8. Generator Function -> A generator function is a function that can be exited and later re-entered. Its context (variable bindings) will be saved across re-entrances.
-function* generatorFunction() {
-    yield 1;
-    yield 2;
-    yield 3;
-}
-const gen = generatorFunction();
-console.log(gen.next().value); 
-console.log(gen.next().value); 
-console.log(gen.next().value);
-console.log(gen.next().value);
+// function* generatorFunction() {
+//     yield 1;
+//     yield 2;
+//     yield 3;
+// }
+// const gen = generatorFunction();
+// console.log(gen.next().value); 
+// console.log(gen.next().value); 
+// console.log(gen.next().value);
+// console.log(gen.next().value);
+
+
+// Pie operation in Javascript

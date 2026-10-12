@@ -126,3 +126,8 @@
 // }
 // outer();
 
+// Pie concept in Javascript
+Math.PI = 5;
+console.log(Math.PI); 
+'use strict';
+Math.PI = 5;
