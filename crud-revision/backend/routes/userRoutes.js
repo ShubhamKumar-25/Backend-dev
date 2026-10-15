@@ -9,6 +9,7 @@ const {
     deleteUser
 } = require('../controllers/userControllers');
 
+// Define routes for user CRUD operations
 router.get('/users', getAllUsers);
 router.get('/users/:id', getUserById);
 router.post('/users', createUser);
