@@ -1,6 +1,6 @@
 
+// This is a sample code for AI chat using Groq SDK
 const Groq = require('groq-sdk')
-
 const groq = new Groq({
     apiKey: process.env.GROQ_API_KEY
 });
