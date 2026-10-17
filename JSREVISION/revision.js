@@ -9,11 +9,12 @@ const user = [
     {name: "Jasprit Bumrah", age: 29, city: "Hyderabad"},
     {name: "Shikhar Dhawan", age: 35, city: "Pune"},
     {name: "KL Rahul", age: 26, city: "Jaipur"},
-    {name: "Ravindra Jadeja", age: 32, city: "Ahmedabad"}
+    {name: "Ravindra Jadeja", age: 32, city: "Ahmedabad"},
+    {namw: "Yuzvendra Chahal", age: 24, city: "Lucknow"}
 ]
 let result = [];
 for(let i=0; i<user.length; i++){
-    if(user[i].age>27){
+    if(user[i].age > 27){
         result.push(user[i]);
 
     }
