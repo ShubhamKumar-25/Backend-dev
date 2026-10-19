@@ -53,10 +53,55 @@ Array -> [1,2,3,4,5,6];
 function ->  Reusable code of block.
 */
 
+// Object 
+// const users = {
+//     name: "Shubham Kumar",
+//     age: 22,
+//     city: "Motihari",
+//     isStudent: true
+// }
+// console.log(users.age);
+// console.log(users);
+
+// Array
+// let nums = [22,31,55];
+// const res = nums.map((nums) => nums * 2);
+// const res2 = nums.filter((n) => {
+//     if(n % 2 == 0){
+//         return true;
+//     }
+//     else{
+//         return false;
+//     }
+// })
+// console.log(res);
+// console.log(res2);
+
+// Function
+// function greet(){
+//     const name = "Shubham Kumar"
+//     console.log("Rohan Gupta");
+// }
+// greet();
+// const fun = function(){
+//     console.log("Hey", greet());
+    
+// }
+// fun();
 // Type correction
-let name = "Rohan " + 22;
-console.log(name);
+// let name = "Rohan " + 22;
+// console.log(name);
 
-const city = 8450 + " Motihari"
-console.log(city);
+// const city = 8450 + " Motihari"
+// console.log(city);
 
+// let age = "25";
+// let isAdult = Number(age) === 25;
+// console.log(isAdult);
+// console.log(age === 25);
+
+const num = 222;
+const rr = String(num);
+console.log(rr);
+console.log(typeof(rr));
+console.log(typeof(num));

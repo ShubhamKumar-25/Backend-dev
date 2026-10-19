@@ -1,5 +1,3 @@
-
-
 // const user = {
 //     name: "Rohan Gupta",
 //     age: 22,
