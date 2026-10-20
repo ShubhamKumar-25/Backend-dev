@@ -63,6 +63,16 @@ function ->  Reusable code of block.
 // console.log(users.age);
 // console.log(users);
 
+let user = {
+    name: "Rohan Gupta",
+    age: 22,
+    city: "Motihari",
+    greet: function(){
+        console.log(`Hey everyone i am ${this.name} and i am ${this.age} years old and i am from ${this.city}.`);
+    }
+}
+user.greet();
+
 // Array
 // let nums = [22,31,55];
 // const res = nums.map((nums) => nums * 2);
@@ -100,8 +110,9 @@ function ->  Reusable code of block.
 // console.log(isAdult);
 // console.log(age === 25);
 
-const num = 222;
-const rr = String(num);
-console.log(rr);
-console.log(typeof(rr));
-console.log(typeof(num));
+// const num = 222;
+// const rr = String(num);
+// console.log(rr);
+// console.log(typeof(rr));
+// console.log(typeof(num));
+
