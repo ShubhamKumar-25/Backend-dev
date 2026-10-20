@@ -72,6 +72,7 @@ let user = {
     }
 }
 user.greet();
+console.log("User name is -> ", user.name);
 
 // Array
 // let nums = [22,31,55];
