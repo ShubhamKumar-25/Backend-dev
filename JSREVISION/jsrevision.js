@@ -63,16 +63,16 @@ function ->  Reusable code of block.
 // console.log(users.age);
 // console.log(users);
 
-let user = {
-    name: "Rohan Gupta",
-    age: 22,
-    city: "Motihari",
-    greet: function(){
-        console.log(`Hey everyone i am ${this.name} and i am ${this.age} years old and i am from ${this.city}.`);
-    }
-}
-user.greet();
-console.log("User name is -> ", user.name);
+// let user = {
+//     name: "Rohan Gupta",
+//     age: 22,
+//     city: "Motihari",
+//     greet: function(){
+//         console.log(`Hey everyone i am ${this.name} and i am ${this.age} years old and i am from ${this.city}.`);
+//     }
+// }
+// user.greet();
+// console.log("User name is -> ", user.name);
 
 // Array
 // let nums = [22,31,55];
