@@ -2,3 +2,6 @@ This is my main branch code.
 I am learning Git branches.
 This is my first feature branch change.
 now i commit my branches in the main branch
+
+
+practice some Linux commands
