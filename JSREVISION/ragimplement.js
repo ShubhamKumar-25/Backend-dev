@@ -13,3 +13,27 @@ function chunkText(text, size = 500, overlap = 100) {
   return chunks.filter(chunk => chunk.trim());
 }
 
+
+// 2. Embedding generate karna
+async function getEmbedding(text) {
+  const response = await fetch(
+    "https://api.openai.com/v1/embeddings",
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "text-embedding-3-small",
+        input: text,
+      }),
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(`Embedding API failed: ${response.status}`);
+  }
+  const data = await response.json();
+  return data.data[0].embedding;
+}
