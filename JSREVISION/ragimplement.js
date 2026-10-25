@@ -37,3 +37,20 @@ async function getEmbedding(text) {
   const data = await response.json();
   return data.data[0].embedding;
 }
+
+
+
+// 3. Cosine similarity calculate karna
+function cosineSimilarity(a, b) {
+  let dot = 0;
+  let normA = 0;
+  let normB = 0;
+
+  for (let i = 0; i < a.length; i++) {
+    dot += a[i] * b[i];
+    normA += a[i] ** 2;
+    normB += b[i] ** 2;
+  }
+
+  return dot / (Math.sqrt(normA) * Math.sqrt(normB) || 1);
+}
