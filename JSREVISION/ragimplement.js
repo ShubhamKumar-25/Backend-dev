@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 const documents = [];
 
-// 1. Text ko chunks mein divide karna
+// 1. To divide text into chunks
 function chunkText(text, size = 500, overlap = 100) {
   const chunks = [];
   for (let i = 0; i < text.length; i += size - overlap) {
@@ -14,7 +14,7 @@ function chunkText(text, size = 500, overlap = 100) {
 }
 
 
-// 2. Embedding generate karna
+// 2. Embedding generate 
 async function getEmbedding(text) {
   const response = await fetch(
     "https://api.openai.com/v1/embeddings",
@@ -39,8 +39,7 @@ async function getEmbedding(text) {
 }
 
 
-
-// 3. Cosine similarity calculate karna
+// 3. calculate Cosine similarity
 function cosineSimilarity(a, b) {
   let dot = 0;
   let normA = 0;
@@ -51,6 +50,5 @@ function cosineSimilarity(a, b) {
     normA += a[i] ** 2;
     normB += b[i] ** 2;
   }
-
   return dot / (Math.sqrt(normA) * Math.sqrt(normB) || 1);
 }
