@@ -52,3 +52,34 @@ function cosineSimilarity(a, b) {
   }
   return dot / (Math.sqrt(normA) * Math.sqrt(normB) || 1);
 }
+
+
+
+// 4. ingrate Document
+app.post("/ingest", async (req, res) => {
+  try {
+    const { text } = req.body;
+
+    if (typeof text !== "string" || !text.trim()) {
+      return res.status(400).json({ error: "Text is required" });
+    }
+
+    const chunks = chunkText(text);
+    const newDocuments = [];
+
+    for (const chunk of chunks) {
+      const embedding = await getEmbedding(chunk);
+
+      newDocuments.push({ text: chunk, embedding });
+    }
+
+    documents.push(...newDocuments);
+
+    res.json({
+      message: "Documents indexed successfully",
+      chunks: newDocuments.length,
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
