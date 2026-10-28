@@ -83,3 +83,17 @@ app.post("/ingest", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+
+// 5. Relevant chunks retrieve karna
+async function retrieveChunks(question, topK = 3) {
+  const questionEmbedding = await getEmbedding(question);
+
+  return documents
+    .map(doc => ({
+      text: doc.text,
+      score: cosineSimilarity(questionEmbedding, doc.embedding),
+    }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, topK);
+}
