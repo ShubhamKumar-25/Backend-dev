@@ -85,7 +85,7 @@ app.post("/ingest", async (req, res) => {
 });
 
 
-// 5. Relevant chunks retrieve karna
+// 5. Relevant chunks retrieve
 async function retrieveChunks(question, topK = 3) {
   const questionEmbedding = await getEmbedding(question);
 
