@@ -97,3 +97,40 @@ async function retrieveChunks(question, topK = 3) {
     .sort((a, b) => b.score - a.score)
     .slice(0, topK);
 }
+
+
+
+// 6. Generate answer from LLM
+async function generateAnswer(question, context) {
+  const response = await fetch(
+    "https://api.groq.com/openai/v1/chat/completions",
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "llama-3.3-70b-versatile",
+        messages: [
+          {
+            role: "system",
+            content:
+              "Answer using only the provided context. " +
+              "If the answer is not in the context, say you don't know.",
+          },
+          {
+            role: "user",
+            content: `Context:\n${context}\n\nQuestion: ${question}`,
+          },
+        ],
+        temperature: 0.2,
+      }),
+    }
+  );
+  if (!response.ok) {
+    throw new Error(`Groq API failed: ${response.status}`);
+  }
+  const data = await response.json();
+  return data.choices[0].message.content;
+}
