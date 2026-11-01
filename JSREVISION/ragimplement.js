@@ -99,7 +99,6 @@ async function retrieveChunks(question, topK = 3) {
 }
 
 
-
 // 6. Generate answer from LLM
 async function generateAnswer(question, context) {
   const response = await fetch(
@@ -134,3 +133,31 @@ async function generateAnswer(question, context) {
   const data = await response.json();
   return data.choices[0].message.content;
 }
+
+
+// 7. Main RAG endpoint
+app.post("/ask", async (req, res) => {
+  try {
+    const { question } = req.body;
+    if (typeof question !== "string" || !question.trim()) {
+      return res.status(400).json({
+        error: "Question is required",
+      });
+    }
+    if (documents.length === 0) {
+      return res.status(400).json({
+        error: "Please ingest documents first",
+      });
+    }
+    const results = await retrieveChunks(question.trim());
+    const context = results.map(item => item.text).join("\n\n");
+    const answer = await generateAnswer(question, context);
+    res.json({
+      question,
+      answer,
+      sources: results.map(item => item.text),
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
