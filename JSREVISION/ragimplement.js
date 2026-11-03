@@ -59,22 +59,16 @@ function cosineSimilarity(a, b) {
 app.post("/ingest", async (req, res) => {
   try {
     const { text } = req.body;
-
     if (typeof text !== "string" || !text.trim()) {
       return res.status(400).json({ error: "Text is required" });
     }
-
     const chunks = chunkText(text);
     const newDocuments = [];
-
     for (const chunk of chunks) {
       const embedding = await getEmbedding(chunk);
-
       newDocuments.push({ text: chunk, embedding });
     }
-
     documents.push(...newDocuments);
-
     res.json({
       message: "Documents indexed successfully",
       chunks: newDocuments.length,
@@ -88,7 +82,6 @@ app.post("/ingest", async (req, res) => {
 // 5. Relevant chunks 
 async function retrieveChunks(question, topK = 3) {
   const questionEmbedding = await getEmbedding(question);
-
   return documents
     .map(doc => ({
       text: doc.text,
