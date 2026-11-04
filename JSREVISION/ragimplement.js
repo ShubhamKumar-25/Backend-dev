@@ -53,8 +53,6 @@ function cosineSimilarity(a, b) {
   return dot / (Math.sqrt(normA) * Math.sqrt(normB) || 1);
 }
 
-
-
 // 4. ingrate Document
 app.post("/ingest", async (req, res) => {
   try {
@@ -155,6 +153,7 @@ app.post("/ask", async (req, res) => {
   }
 });
 
+// Server setup
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
