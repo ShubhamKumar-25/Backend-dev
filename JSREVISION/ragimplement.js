@@ -125,7 +125,6 @@ async function generateAnswer(question, context) {
   return data.choices[0].message.content;
 }
 
-
 // 7. Main RAG endpoint
 app.post("/ask", async (req, res) => {
   try {
@@ -158,3 +157,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+// UPDATE
