@@ -127,7 +127,27 @@
 // outer();
 
 // Pie concept in Javascript
-Math.PI = 5;
-console.log(Math.PI); 
-'use strict';
-Math.PI = 5;
+// Math.PI = 5;
+// console.log(Math.PI); 
+// 'use strict';
+// Math.PI = 5;
+
+
+// Promise Practice
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let isIndian = true;
+        if(isIndian){
+            resolve("Yes, This is an Indian citizen.");
+        }
+        else{
+            treject("No, This is not an Indian citizen.");
+        }
+    }, 2000)
+})
+promise.then((message) => {
+    console.log(message)
+})
+.catch((error) => {
+    console.log(error)
+});

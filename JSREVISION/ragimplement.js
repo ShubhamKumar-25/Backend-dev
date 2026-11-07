@@ -13,7 +13,6 @@ function chunkText(text, size = 500, overlap = 100) {
   return chunks.filter(chunk => chunk.trim());
 }
 
-
 // 2. Embedding generate 
 async function getEmbedding(text) {
   const response = await fetch(
