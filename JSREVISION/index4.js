@@ -136,12 +136,12 @@
 // Promise Practice
 const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
-        let isIndian = true;
+        let isIndian = false;
         if(isIndian){
             resolve("Yes, This is an Indian citizen.");
         }
         else{
-            treject("No, This is not an Indian citizen.");
+            reject("No, This is not an Indian citizen.");
         }
     }, 2000)
 })
