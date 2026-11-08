@@ -153,3 +153,7 @@ promise.then((message) => {
 });
 
 console.log("-----------------------------")
+// SetTimeout practice
+setTimeout(() => {
+    console.log("This is a setTimeout function.");
+}, 2000)
