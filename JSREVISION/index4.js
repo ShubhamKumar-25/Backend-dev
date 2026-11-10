@@ -157,3 +157,5 @@ console.log("-----------------------------")
 setTimeout(() => {
     console.log("This is a setTimeout function.");
 }, 2000)
+
+console.log("-----------------------------");
