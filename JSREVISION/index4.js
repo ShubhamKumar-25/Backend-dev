@@ -134,28 +134,29 @@
 
 
 // Promise Practice
-const promise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        let isIndian = false;
-        if(isIndian){
-            resolve("Yes, This is an Indian citizen.");
-        }
-        else{
-            reject("No, This is not an Indian citizen.");
-        }
-    }, 2000)
-})
-promise.then((message) => {
-    console.log(message)
-})
-.catch((error) => {
-    console.log(error)
-});
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         let isIndian = false;
+//         if(isIndian){
+//             resolve("Yes, This is an Indian citizen.");
+//         }
+//         else{
+//             reject("No, This is not an Indian citizen.");
+//         }
+//     }, 2000)
+// })
+// promise.then((message) => {
+//     console.log(message)
+// })
+// .catch((error) => {
+//     console.log(error)
+// });
 
-console.log("-----------------------------")
-// SetTimeout practice
-setTimeout(() => {
-    console.log("This is a setTimeout function.");
-}, 2000)
+// console.log("-----------------------------")
+// // SetTimeout practice
+// setTimeout(() => {
+//     console.log("This is a setTimeout function.");
+// }, 2000)
 
-console.log("-----------------------------");
+// console.log("-----------------------------");
+
