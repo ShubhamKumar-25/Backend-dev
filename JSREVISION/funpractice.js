@@ -43,3 +43,33 @@ class Gaadi {
 const meriCar = new Gaadi("Honda City", "Black");
 console.log(meriCar.naam);    // Output: Honda City
 console.log(meriCar.start()); // Output: Honda City (Black) start ho gayi hai! 🚗
+
+
+// Parent Class (Superclass)
+class Gaadi {
+    constructor(naam) {
+        this.naam = naam;
+    }
+
+    chalo() {
+        return `${this.naam} chal rahi hai...`;
+    }
+}
+
+// Child Class (Subclass) - 'extends' use karke Gaadi ki saari powers le li
+class ElectricScooter extends Gaadi {
+    constructor(naam, batteryLife) {
+        super(naam); // Parent class (Gaadi) ke constructor ko naam bhej diya
+        this.batteryLife = batteryLife; // Apni nayi property add ki
+    }
+
+    chargeKaro() {
+        return `${this.naam} charge ho rahi hai. Battery: ${this.batteryLife}%`;
+    }
+}
+
+// Naya Electric Scooter object banaya
+ketanScooter = new ElectricScooter("Ather", 85);
+
+console.log(ketanScooter.chalo());      // Output: Ather chal rahi hai... (Parent method mil gaya!)
+console.log(ketanScooter.chargeKaro()); // Output: Ather charge ho rahi hai. Battery: 85%
