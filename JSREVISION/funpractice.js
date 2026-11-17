@@ -73,4 +73,4 @@ ketanScooter = new ElectricScooter("Ather", 85);
 
 console.log(ketanScooter.chalo());      // Output: Ather chal rahi hai... (Parent method mil gaya!)
 console.log(ketanScooter.chargeKaro()); // Output: Ather charge ho rahi hai. Battery: 85%
-// hello
+// helloo
