@@ -56,17 +56,15 @@ class Gaadi {
     }
 }
 
-// Child Class (Subclass) - 'extends' use karke Gaadi ki saari powers le li
 class ElectricScooter extends Gaadi {
     constructor(naam, batteryLife) {
-        super(naam); 
+        super(naam);
         this.batteryLife = batteryLife;
     }
     chargeKaro() {
         return `${this.naam} charge ho rahi hai. Battery: ${this.batteryLife}%`;
     }
 }
-// Naya Electric Scooter object banaya
 ketanScooter = new ElectricScooter("Ather", 85);
 console.log(ketanScooter.chalo());
 console.log(ketanScooter.chargeKaro()); 
