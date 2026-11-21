@@ -29,7 +29,6 @@
 
 
 class Gaadi {
-    // Constructor: Ye object banate hi sabse pehle chal padta hai values set karne ke liye
     constructor(naam, rang) {
         this.naam = naam;
         this.rang = rang;
@@ -39,11 +38,9 @@ class Gaadi {
         return `${this.naam} (${this.rang}) start ho gayi hai! 🚗`;
     }
 }
-// Naya object (Ghar) banana using 'new' keyword
 const meriCar = new Gaadi("Honda City", "Black");
 console.log(meriCar.naam);    // Output: Honda City
 console.log(meriCar.start()); // Output: Honda City (Black) start ho gayi hai! 🚗
-
 
 // Parent Class (Superclass)
 class Gaadi {
