@@ -26,14 +26,11 @@
 // user.sayHellowArrow();
 
 
-
-
 class Gaadi {
     constructor(naam, rang) {
         this.naam = naam;
         this.rang = rang;
     }
-    // Method (Function)
     start() {
         return `${this.naam} (${this.rang}) start ho gayi hai! 🚗`;
     }
