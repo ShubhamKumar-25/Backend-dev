@@ -36,7 +36,7 @@ class Gaadi {
     }
 }
 const meriCar = new Gaadi("Honda City", "Black");
-console.log(meriCar.naam);    // Output: Honda City
+console.log(meriCar.naam);    
 console.log(meriCar.start()); // Output: Honda City (Black) start ho gayi hai! 🚗
 
 // Parent Class (Superclass)
