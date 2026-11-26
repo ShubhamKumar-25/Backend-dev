@@ -39,7 +39,7 @@ const meriCar = new Gaadi("Honda City", "Black");
 console.log(meriCar.naam);
 console.log(meriCar.start());
 
-// Parent Class
+// Parent 
 class Gaadi {
     constructor(naam) {
         this.naam = naam;
