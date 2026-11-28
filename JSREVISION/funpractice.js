@@ -9,7 +9,7 @@
 //     return `Making a cup of ${type} coffee... Enjoy your drink!`;
 // }
 
-// // Arrow functions and how they handle the this keyword differently.
+// // Arrow functions and how they handle the this keyword
 // const user = {
 //     name: "Rohan Gupta",
 
